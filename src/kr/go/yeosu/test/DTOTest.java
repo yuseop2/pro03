@@ -1,20 +1,16 @@
 package kr.go.yeosu.test;
 
-<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import kr.go.yeosu.util.MySQL8;
-=======
-import static org.junit.Assert.*;
->>>>>>> df8f963aecadd4b41755529d0572dc57eecbefce
 
 import org.junit.Test;
 
 public class DTOTest {
-<<<<<<< HEAD
+
 	public Connection con = null;
 	public PreparedStatement pstmt = null;
 	public ResultSet rs = null;
@@ -73,12 +69,4 @@ class Sample1 {
 	public void setItem3(String item3) {
 		this.item3 = item3;
 	}
-=======
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-
->>>>>>> df8f963aecadd4b41755529d0572dc57eecbefce
 }

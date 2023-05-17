@@ -1,6 +1,5 @@
 package kr.go.yeosu.util;
 
-<<<<<<< HEAD
 public class Page {
 
 	private int postLength;		//한 페이지당 글 수
@@ -296,16 +295,5 @@ public class Page {
 
 	public int getTotalPages() {
 		return totalPages;
-=======
-import static org.junit.Assert.fail;
-
-import org.junit.Test;
-
-public class Page {
-	
-	@Test
-	public void test() {
-		fail("Not yet implemented");
->>>>>>> df8f963aecadd4b41755529d0572dc57eecbefce
 	}
 }
