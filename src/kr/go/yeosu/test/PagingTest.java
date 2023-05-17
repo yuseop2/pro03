@@ -1,5 +1,6 @@
 package kr.go.yeosu.test;
 
+<<<<<<< HEAD
 import kr.go.yeosu.util.Page;
 
 public class PagingTest {
@@ -21,5 +22,16 @@ public class PagingTest {
 		System.out.println("현재 페이지 번호 : "+p1.getCPage());
 		System.out.println("전체 페이지 수 : "+p1.getTotalPages());
 		System.out.println("현재 블록 : "+p1.getCurrentBlock());
+=======
+import static org.junit.Assert.fail;
+
+import org.junit.Test;
+
+public class PagingTest {
+	
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+>>>>>>> df8f963aecadd4b41755529d0572dc57eecbefce
 	}
 }
