@@ -2,7 +2,11 @@ select * from mysql.user;
 
 show databases;
 
+<<<<<<< HEAD
 use yeosu;
+=======
+use jeju;
+>>>>>>> 4f4e32c7ec7683ee3d91a863102429d360d3b751
 
 set AUTOCOMMIT=true;	-- 자동커밋 설정
 show variables like 'autocommit';	-- 자동커밋 설정 확인

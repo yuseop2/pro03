@@ -10,8 +10,12 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
+<<<<<<< HEAD
 import kr.go.yeosu.util.AES256;
 
+=======
+import com.crypto.util.AES256;
+>>>>>>> 4f4e32c7ec7683ee3d91a863102429d360d3b751
 public class AES256Test {
 	public static void main(String[] args) throws NoSuchAlgorithmException,
 		InvalidKeyException, InvalidKeySpecException, NoSuchPaddingException,
