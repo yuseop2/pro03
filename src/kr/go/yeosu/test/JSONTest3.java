@@ -3,6 +3,7 @@ package kr.go.yeosu.test;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,10 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import org.json.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.Test;
-//
+
 @WebServlet("/JSONTest3.do")
 public class JSONTest3 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -43,17 +44,16 @@ public class JSONTest3 extends HttpServlet {
 	}
 	
 	public void jsonTest3(HttpServletRequest request, HttpServletResponse response) throws IOException{	
-		samList = dao.getSampleList();
-
+		ArrayList<Sample1> data = dao.getSampleList();
+		
 		PrintWriter out = response.getWriter();
-		for(int i=0;i<samList.size();i++){
-			JSONObject obj = new JSONObject();
-			Sample1 sample = samList.get(i); 
-			obj.put(i+"",sample);
-			json2.put(obj);
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("data", data);
+		
+		net.sf.json.JSONObject json3 = new net.sf.json.JSONObject();
+		json3.putAll(map);
+		out.println(json3.toString());
 		}
-		out.println(json2.toString());	
-	}
 	
 	@Test
 	public void test() throws IOException {

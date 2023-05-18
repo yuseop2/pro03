@@ -29,7 +29,7 @@ public class JSONTest2 extends HttpServlet {
 	
 	public void jsonTest2(String item1) throws IOException{
 		Sample1 result = dao.getSample(item1);
-				
+		
 		json.put("name", result.getItem1());
 		json.put("point", result.getItem2());
 		json.put("resdate", result.getItem3());
@@ -42,6 +42,7 @@ public class JSONTest2 extends HttpServlet {
 				
 		json.put("name", result.getItem1());
 		json.put("point", result.getItem2());
+		json.put("resdate", result.getItem3());
 		PrintWriter out = response.getWriter();
 		out.println(json.toString());	
 	}

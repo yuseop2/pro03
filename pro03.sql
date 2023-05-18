@@ -2,11 +2,11 @@ select * from mysql.user;
 
 show databases;
 
-<<<<<<< HEAD
+
 use yeosu;
-=======
+
 use jeju;
->>>>>>> 4f4e32c7ec7683ee3d91a863102429d360d3b751
+
 
 set AUTOCOMMIT=true;	-- 자동커밋 설정
 show variables like 'autocommit';	-- 자동커밋 설정 확인
@@ -19,6 +19,6 @@ insert into sample1 values ('chotaejeong', 60, default);
 insert into sample1 values ('chokyoheing', 80, default);
 
 select * from sample1;
-
+-- drop table sample1;
 -- 자동 커밋이 설정되어 있으므로 커밋하지 않아도 됨
 -- commit;

@@ -105,7 +105,7 @@ class SampleDAO {
 		try {
 			con = MySQL8.getConnection();
 			pstmt = con.prepareStatement(MySQL8.SAMPLE_SELECT_ONE);
-			pstmt.setString(1, "item1");
+			pstmt.setString(1, item1);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				sam.setItem1(rs.getString("item1"));
