@@ -1,6 +1,6 @@
 package kr.go.yeosu.dto;
 
-public class Cate {
+public class CateDTO {
 	private String cate;
 	private String gname;
 	private String cname;

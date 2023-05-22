@@ -16,7 +16,7 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
-import kr.go.yeosu.dto.User;
+import kr.go.yeosu.dto.UserDTO;
 import kr.go.yeosu.util.MySQL8;
 
 import kr.go.yeosu.util.AES256;
@@ -111,7 +111,7 @@ public class UserDAO {
 			return cnt;
 		}
 		
-		public int insertUser(User user){
+		public int insertUser(UserDTO user){
 			int cnt = 0;
 			try {
 				con = MySQL8.getConnection();
@@ -133,8 +133,8 @@ public class UserDAO {
 			return cnt;
 		}
 		
-		public User myInfo(String id) throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException{
-			User user = new User();
+		public UserDTO myInfo(String id) throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException{
+			UserDTO user = new UserDTO();
 			try {
 				con = MySQL8.getConnection();
 				pstmt = con.prepareStatement(MySQL8.USER_LOGIN);
@@ -166,7 +166,7 @@ public class UserDAO {
 			return user;
 		}
 		
-		public int updateUser(User user){
+		public int updateUser(UserDTO user){
 			int cnt = 0;
 			try {
 				con = MySQL8.getConnection();
@@ -188,7 +188,7 @@ public class UserDAO {
 			return cnt;
 		}
 		
-		public int updateUser2(User user){
+		public int updateUser2(UserDTO user){
 			int cnt = 0;
 			try {
 				con = MySQL8.getConnection();
@@ -227,14 +227,14 @@ public class UserDAO {
 			return cnt;
 		}
 		
-		public ArrayList<User> userList() throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException{
-			ArrayList<User> uList = new ArrayList<User>();
+		public ArrayList<UserDTO> userList() throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, BadPaddingException, IllegalBlockSizeException{
+			ArrayList<UserDTO> uList = new ArrayList<UserDTO>();
 			try {
 				con = MySQL8.getConnection();
 				pstmt = con.prepareStatement(MySQL8.USER_SELECT_ALL);
 				rs = pstmt.executeQuery();
 				while(rs.next()){
-					User user = new User();
+					UserDTO user = new UserDTO();
 					user.setId(rs.getString("id"));
 					qpw = AES256.decryptAES256(rs.getString("pw"), key);
 					int k = qpw.length();	//암호 글자수 세기
@@ -260,8 +260,8 @@ public class UserDAO {
 			}
 			return uList;
 		}
-		public User getTel(String id) {
-			User user = new User();
+		public UserDTO getTel(String id) {
+			UserDTO user = new UserDTO();
 			try {
 				con = MySQL8.getConnection();
 				pstmt = con.prepareStatement(MySQL8.USER_LOGIN);

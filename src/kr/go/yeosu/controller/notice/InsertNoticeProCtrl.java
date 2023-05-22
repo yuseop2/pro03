@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.go.yeosu.dto.Notice;
-import kr.go.yeosu.model.NoticeDAO;
+import kr.go.yeosu.dto.NoticeDTO;
+import kr.go.yeosu.model.NoticeDAOMySQL;
+
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -55,8 +56,8 @@ public class InsertNoticeProCtrl extends HttpServlet {
 			System.out.print("예외 발생 : " + e);
 		}
 		
-		NoticeDAO ndao = new NoticeDAO();
-		Notice noti = new Notice();
+		NoticeDAOMySQL ndao = new NoticeDAOMySQL();
+		NoticeDTO noti = new NoticeDTO();
 		noti.setTitle(title);
 		noti.setContent(content);
 		noti.setFile1(fileName);

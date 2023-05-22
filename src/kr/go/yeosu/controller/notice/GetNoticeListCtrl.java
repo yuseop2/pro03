@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.go.yeosu.dto.Notice;
-import kr.go.yeosu.model.NoticeDAO;
+import kr.go.yeosu.dto.NoticeDTO;
+import kr.go.yeosu.model.NoticeDAOMySQL;
 
 @WebServlet("/NoticeList.do")
 public class GetNoticeListCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		NoticeDAO ndao = new NoticeDAO();
-		ArrayList<Notice> notiList = new ArrayList<Notice>();
+		NoticeDAOMySQL ndao = new NoticeDAOMySQL();
+		ArrayList<NoticeDTO> notiList = new ArrayList<NoticeDTO>();
 		notiList = ndao.noticeListAll();
 		request.setAttribute("notiList", notiList);
 		

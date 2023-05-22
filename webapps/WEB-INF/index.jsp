@@ -10,14 +10,15 @@
 <%@ include file="../common.jsp" %>
 <title>메인 페이지</title>
 <style>
+
 .container-fluid { width:1280px; }
 </style>
 </head>
 <body>
-<%-- <%@ include file="../header.jsp" %> --%>
+<%@ include file="../header.jsp" %>
 <div class="content">
 	<h2>메인 페이지 콘텐츠</h2>
 </div>
-<%-- <%@ include file="../footer.jsp" %> --%>
+<%@ include file="../footer.jsp" %> 
 </body>
 </html>

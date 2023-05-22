@@ -2,7 +2,7 @@ package kr.go.yeosu.dto;
 
 import java.util.Date;
 
-public class User {
+public class UserDTO {
 	private String id;
 	private String pw;
 	private String name;
@@ -11,7 +11,7 @@ public class User {
 	private String email;
 	private String regdate;
 	
-	public User(){
+	public UserDTO(){
 		Date now = new Date();
 		this.regdate = now.toString();
 	}

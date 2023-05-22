@@ -1,6 +1,6 @@
 package kr.go.yeosu.dto;
 
-public class Place {
+public class PlaceDTO {
 	private String pcode;
 	private String pname;
 	private String cate;

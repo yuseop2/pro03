@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.go.yeosu.dto.Notice;
-import kr.go.yeosu.model.NoticeDAO;
+import kr.go.yeosu.dto.NoticeDTO;
+import kr.go.yeosu.model.NoticeDAOMySQL;
 
 /**
  * Servlet implementation class UpdateNoticeCtrl
@@ -22,8 +22,8 @@ public class UpdateNoticeCtrl extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idx = Integer.parseInt(request.getParameter("idx"));
-		NoticeDAO ndao = new NoticeDAO();
-		Notice noti = new Notice();
+		NoticeDAOMySQL ndao = new NoticeDAOMySQL();
+		NoticeDTO noti = new NoticeDTO();
 		
 		noti = ndao.updateNotice(idx);
 		

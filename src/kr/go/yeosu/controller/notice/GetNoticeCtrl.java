@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import kr.go.yeosu.dto.Notice;
-import kr.go.yeosu.dto.User;
-import kr.go.yeosu.model.NoticeDAO;
+import kr.go.yeosu.dto.NoticeDTO;
+import kr.go.yeosu.dto.UserDTO;
+import kr.go.yeosu.model.NoticeDAOMySQL;
 import kr.go.yeosu.model.UserDAO;
 
 @WebServlet("/GetNotice.do")
@@ -27,9 +27,9 @@ public class GetNoticeCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		int idx = Integer.parseInt(request.getParameter("idx"));
-		NoticeDAO ndao = new NoticeDAO();
-		Notice noti = new Notice();
+		int idx = 0 ;
+		NoticeDAOMySQL ndao = new NoticeDAOMySQL();
+		NoticeDTO noti = new NoticeDTO();
 		noti = ndao.getNotice(idx);
 		String file1 = ""; 
 		String filepath1 = "";
@@ -48,7 +48,7 @@ public class GetNoticeCtrl extends HttpServlet {
 		String id = (String) ses.getAttribute("sid");
 		
 		UserDAO udao = new UserDAO();
-		User user = new User(); 
+		UserDTO user = new UserDTO(); 
 		try {
 			user = udao.myInfo(id);
 		} catch (InvalidKeyException | NoSuchPaddingException

@@ -6,14 +6,29 @@
 	String sid = "";
 	if(session!=null) sid = (String) session.getAttribute("sid");  
 %>
-<header id="hd" class="container">
+<header id="hd" class="container is-widescreen">
 	<div class="container-fluid">
 		<nav id="tnb" class="navbar navbar-default">
+			<div class="columns">
+				  <div class="column">
+				    <a href=${path}/NoticeList.do >관광명소</a>
+				  </div>
+				  <div class="column">
+				    <a href="#" >문화/축제</a>
+				  </div>
+				  <div class="column">
+				    <a href="#" >숙박/음식/쇼핑</a>
+				  </div>
+				  <div class="column">
+				   <a href="#" >여행/체험</a>
+				  </div>
+				  <div class="column">
+				   <a href="#" >관광안내</a>
+				  </div>
+				</div>
 			<ul class="nav navbar-nav navbar-right" style="padding-right:40px">
 				<c:if test="${!empty sid && sid!='admin'}">			
-					<li><a href="${path }/MyPage.do">마이페이지</a></li>					
-					<li><a href="${path1 }/MyBasket.do?id=${sid }">장바구니</a></li>
-					<li><a href="${path }/MySalesList.do?id=${sid }">구매내역</a></li>
+					<li><a href="${path }/MyPage.do">마이페이지</a></li>						
 					<li><a href="${path }/UserLogout.do">로그아웃</a></li>	
 				</c:if>
 				<c:if test="${empty sid }">

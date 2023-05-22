@@ -9,11 +9,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-    <servlet-name>shop1</servlet-name>
+    <servlet-name>여수문화관광</servlet-name>
     <servlet-class>kr.go.yeosu.controller.Main</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>shop1</servlet-name>
+    <servlet-name>여수문화관광</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   <servlet-mapping>

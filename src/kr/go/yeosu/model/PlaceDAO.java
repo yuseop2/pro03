@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import kr.go.yeosu.dto.Cate;
-import kr.go.yeosu.dto.Place;
+import kr.go.yeosu.dto.CateDTO;
+import kr.go.yeosu.dto.PlaceDTO;
 import kr.go.yeosu.util.MySQL8;
 
 public class PlaceDAO {
@@ -16,8 +16,8 @@ public class PlaceDAO {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 
-	public ArrayList<Place> placeListByCate(String cate){
-		ArrayList<Place> placeList = new ArrayList<Place>();
+	public ArrayList<PlaceDTO> placeListByCate(String cate){
+		ArrayList<PlaceDTO> placeList = new ArrayList<PlaceDTO>();
 		
 		try {
 			con = MySQL8.getConnection();
@@ -25,7 +25,7 @@ public class PlaceDAO {
 			pstmt.setString(1, cate);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
-				Place place = new Place();
+				PlaceDTO place = new PlaceDTO();
 				place.setPcode(rs.getString("pcode"));
 				place.setPname(rs.getString("pname"));
 				place.setCate(rs.getString("cate"));
@@ -46,9 +46,9 @@ public class PlaceDAO {
 		return placeList;
 	}
 	
-	public Place getPlace(String pcode){
+	public PlaceDTO getPlace(String pcode){
 		
-		Place place = new Place();
+		PlaceDTO place = new PlaceDTO();
 		
 		try {
 			con = MySQL8.getConnection();
@@ -103,14 +103,14 @@ public class PlaceDAO {
 		}
 		
 	//대분류 코드 반환
-			public ArrayList<Cate> getFirstCategoryList(){
-				ArrayList<Cate> cateList = new ArrayList<Cate>();
+			public ArrayList<CateDTO> getFirstCategoryList(){
+				ArrayList<CateDTO> cateList = new ArrayList<CateDTO>();
 				try {
 					con = MySQL8.getConnection();
 					pstmt = con.prepareStatement(MySQL8.FIRST_CATEGORY_SELECT);
 					rs = pstmt.executeQuery();
 					while(rs.next()){
-						Cate cate = new Cate();
+						CateDTO cate = new CateDTO();
 						cate.setCate(rs.getString("cate"));
 						cate.setGname(rs.getString("gname"));
 						cate.setCname(rs.getString("cname"));
@@ -127,15 +127,15 @@ public class PlaceDAO {
 			}
 			
 			//중분류 코드 반환
-			public ArrayList<Cate> getSecondCategoryList(String ct){
-				ArrayList<Cate> cateList = new ArrayList<Cate>();
+			public ArrayList<CateDTO> getSecondCategoryList(String ct){
+				ArrayList<CateDTO> cateList = new ArrayList<CateDTO>();
 				try {
 					con = MySQL8.getConnection();
 					pstmt = con.prepareStatement(MySQL8.SECOND_CATEGORY_SELECT);
 					pstmt.setString(1, ct);
 					rs = pstmt.executeQuery();
 					while(rs.next()){
-						Cate cate = new Cate();
+						CateDTO cate = new CateDTO();
 						cate.setCate(rs.getString("cate"));
 						cate.setCname(rs.getString("cname"));
 						cateList.add(cate);
@@ -189,7 +189,7 @@ public class PlaceDAO {
 			}
 			
 	//장소 입력			
-	public int insertPlace(Place place){
+	public int insertPlace(PlaceDTO place){
 		int cnt = 0;
 		try {
 			con = MySQL8.getConnection();
@@ -214,8 +214,8 @@ public class PlaceDAO {
 	}
 	
 	//장소 업데이트
-	public Place updatePlace(String pcode){
-		Place place = new Place();
+	public PlaceDTO updatePlace(String pcode){
+		PlaceDTO place = new PlaceDTO();
 		
 		try {
 			con = MySQL8.getConnection();

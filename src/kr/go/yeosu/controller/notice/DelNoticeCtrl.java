@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.go.yeosu.model.NoticeDAO;
+import kr.go.yeosu.model.NoticeDAOMySQL;
 
 @WebServlet("/DelNotice.do")
 public class DelNoticeCtrl extends HttpServlet {
@@ -15,7 +15,7 @@ public class DelNoticeCtrl extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int idx = Integer.parseInt(request.getParameter("idx"));
-		NoticeDAO ndao = new NoticeDAO();
+		NoticeDAOMySQL ndao = new NoticeDAOMySQL();
 		
 		int cnt = ndao.deleteNotice(idx);
 		if(cnt==0){ //실패하면, 공지사항 글 상세보기로 다시 이동
