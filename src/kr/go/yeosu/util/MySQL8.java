@@ -19,6 +19,14 @@ public class MySQL8 {
 	public final static String SAMPLE_UPDATE = "update sample1 set item2=? where item1=?";
 	public final static String SAMPLE_DELETE = "delete from sample1 where item1=?";
 	
+	//회원 관련 SQL
+	public final static String USER_SELECT_ALL = "select * from tbl_user order by regdate desc";
+	public final static String USER_LOGIN =  "select * from tbl_user where id=?";
+	public final static String INSERT_USER = "insert into tbl_user(id, pw, name, phone, addr, email) values (?,?,?,?,?,?)";
+	public final static String UPDATE_USER = "update tbl_user set pw=?, name=?, phone=?, addr=?, email=? where id=?";
+	public final static String UPDATE_USER2 = "update tbl_user set name=?, phone=?, addr=?, email=? where id=?";
+	public final static String DELETE_USER = "delete from tbl_user where id=?";
+	
 	//Notice 관련 SQL
 	public final static String NOTICE_SELECT_ALL = "select * from tbl_notice order by idx desc";
 	public final static String NOTICE_SELECT_ONE = "select * from tbl_notice where idx=?";

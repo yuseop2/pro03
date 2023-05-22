@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import kr.go.yeosu.dto.Cate;
 import kr.go.yeosu.dto.Place;
 import kr.go.yeosu.util.MySQL8;
 
