@@ -37,9 +37,4 @@
 <link href="${path }/source/bulma.css" rel="stylesheet">
 
 <!-- jquery 로딩-->
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
