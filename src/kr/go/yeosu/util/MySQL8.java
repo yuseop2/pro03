@@ -32,8 +32,8 @@ public class MySQL8 {
 	public final static String NOTICE_SELECT_ONE = "select * from tbl_notice where idx=?";
 	public final static String NOTICE_READCOUNT_UPDATE = "update tbl_notice set readcnt=readcnt+1 where idx=?";
 	public final static String INSERT_NOTICE = "insert into tbl_notice values (default, ?, ?, ?, ?, default, default)";
-	public final static String UPDATE_NOTICE = "update tbl_notice set title=?, content=?, file1=?, resdate=sysdate where idx=?";
-	public final static String UPDATE_NOTICE2 = "update tbl_notice set title=?, content=?, resdate=sysdate where idx=?";
+	public final static String UPDATE_NOTICE = "update tbl_notice set title=?, content=?, file1=?, regdate=default where idx=?";
+	public final static String UPDATE_NOTICE2 = "update tbl_notice set title=?, content=?, regdate=default where idx=?";
 	public final static String DELETE_NOTICE = "delete from tbl_notice where idx=?";
 	
 	//Place 관련 SQL	
@@ -54,7 +54,7 @@ public class MySQL8 {
 	public final static String DELETE_PLACE = "delete from tbl_place where pcode=?";
 	
 	//Review 관련 SQL
-	public final static String Review_SELECT_ALL = "select * from tbl_review order by resdate desc";
+	public final static String Review_SELECT_ALL = "select * from tbl_review order by regdate desc";
 	public final static String Review_SELECT_ONE = "select * from tbl_review where r_num=?";
 	public final static String Review_INSERT = "insert into tbl_review(cate, pcode, id, review, pic) values (?,?,?,?,?)";
 	public final static String Review_UPDATE = "update tbl_review SET review=? where id=? and r_num=?";

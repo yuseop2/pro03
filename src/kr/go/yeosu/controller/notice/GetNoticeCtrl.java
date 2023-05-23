@@ -27,7 +27,7 @@ public class GetNoticeCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		int idx = 0 ;
+		int idx = Integer.parseInt(request.getParameter("idx"));	
 		NoticeDAO ndao = new NoticeDAO();
 		NoticeDTO noti = new NoticeDTO();
 		noti = ndao.getNotice(idx);

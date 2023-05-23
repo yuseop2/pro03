@@ -29,8 +29,8 @@
 					<td><a href="${path1 }/GetNotice.do?idx=${noti.idx }">${noti.title }</a></td>
 					<td>${noti.author }</td>
 					<td>
-						<fmt:parseDate value="${noti.resdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
-						<fmt:formatDate value="${resdate }" pattern="yyyy년 MM월 dd일" />
+						<fmt:parseDate value="${noti.regdate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
+						<fmt:formatDate value="${regdate }" pattern="yyyy년 MM월 dd일" />
 					</td>
 				</tr>
 				</c:forEach>

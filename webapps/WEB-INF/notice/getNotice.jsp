@@ -38,9 +38,9 @@
 				</tr>
 				<tr>
 					<th>작성일</th>
-					<td>					
-						<fmt:parseDate value="${noti.resdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
-						<fmt:formatDate value="${resdate }" pattern="yyyy년 MM월 dd일" />				
+					<td>						
+						<fmt:parseDate value="${noti.regdate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
+						<fmt:formatDate value="${regdate }" pattern="yyyy년 MM월 dd일" />				
 					</td>
 				</tr>
 				<c:if test="${!empty noti.file1 }">

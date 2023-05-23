@@ -28,7 +28,7 @@ public class NoticeDAO  {
 				noti.setContent(rs.getString("content"));
 				noti.setAuthor(rs.getString("author"));
 				noti.setFile1(rs.getString("file1"));
-				noti.setResdate(rs.getString("resdate"));
+				noti.setRegdate(rs.getString("regdate"));
 				noti.setReadcnt(rs.getInt("readcnt"));
 				notiList.add(noti);
 			}
@@ -53,14 +53,14 @@ public class NoticeDAO  {
 			pstmt.setInt(1, idx);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
-				noti.setIdx(rs.getInt("idx"));
+				noti.setIdx(rs.getInt("idx"));				
 				noti.setTitle(rs.getString("title"));
 				noti.setContent(rs.getString("content"));
 				noti.setAuthor(rs.getString("author"));
 				noti.setFile1(rs.getString("file1"));
-				noti.setResdate(rs.getString("resdate"));
+				noti.setRegdate(rs.getString("regdate"));
 				noti.setReadcnt(rs.getInt("readcnt"));
-			}
+			}			
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
 			e.printStackTrace();
 		} catch (SQLException e){	//sql 구문이 틀린 경우 발생
@@ -123,7 +123,7 @@ public class NoticeDAO  {
 				noti.setContent(rs.getString("content"));
 				noti.setAuthor(rs.getString("author"));
 				noti.setFile1(rs.getString("file1"));
-				noti.setResdate(rs.getString("resdate"));
+				noti.setRegdate(rs.getString("regdate"));
 				noti.setReadcnt(rs.getInt("readcnt"));
 			}
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
