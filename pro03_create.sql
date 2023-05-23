@@ -13,8 +13,9 @@ select * from sample1;
 -- 자동 커밋이 설정되어 있으므로 커밋하지 않아도 됨
 commit;
 select * from tbl_place;
-select * from tbl_cate;
+select * from tbl_user;
 drop table tbl_user;
+update tbl_user set pw='AzaFmHR7eWzz4yfbglJAwGOLIC/CoGjqcg0EUIUhd1lvxnrEgFDD1uVoLqZWmuN+8UFDJg=='where id = 'lys24';
 
 -- ALTER TABLE sequence_table auto_increment=1; (MYSQL AUTO_INCREMENT 초기화)
 -- auto_increment (시퀀스역할)
