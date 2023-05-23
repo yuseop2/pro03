@@ -36,8 +36,7 @@ public class MySQL8 {
 	public final static String UPDATE_NOTICE2 = "update tbl_notice set title=?, content=?, resdate=sysdate where idx=?";
 	public final static String DELETE_NOTICE = "delete from tbl_notice where idx=?";
 	
-	//Place 관련 SQL
-	
+	//Place 관련 SQL	
 	public final static String PLACE_CATENAME_SELECT = "select * from tbl_cate where cate=?";
 	public final static String PLACE_SELECT_BYCATE = "select * from tbl_place where cate=? order by pname";
 	public final static String PLACE_SELECT = "select * from tbl_place where pcode=?";
@@ -53,7 +52,20 @@ public class MySQL8 {
 	public final static String INSERT_PLACE = "insert into tbl_place values (?, ?, ?, ?, ?, ?, ?)";
 	public final static String UPDATE_PLACE = "update tbl_place set pname=?, cate=?, addr=?, phone=?, comm=?, pic=? where pcode=?";
 	public final static String DELETE_PLACE = "delete from tbl_place where pcode=?";
-			
+	
+	//Review 관련 SQL
+	public final static String Review_SELECT_ALL = "select * from tbl_review order by resdate desc";
+	public final static String Review_SELECT_ONE = "select * from tbl_review where r_num=?";
+	public final static String Review_INSERT = "insert into tbl_review(cate, pcode, id, review, pic) values (?,?,?,?,?)";
+	public final static String Review_UPDATE = "update tbl_review SET review=? where id=? and r_num=?";
+	public final static String Review_DELETE = "delete from tbl_review where r_num=?";
+		
+	//QnA 관련 SQL
+	
+	
+	
+	
+	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName(driver);
 		Connection con = DriverManager.getConnection(url, user, pass);

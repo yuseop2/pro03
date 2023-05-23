@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
 import kr.go.yeosu.dto.NoticeDTO;
 import kr.go.yeosu.dto.UserDTO;
-import kr.go.yeosu.model.NoticeDAOMySQL;
+import kr.go.yeosu.model.NoticeDAO;
 import kr.go.yeosu.model.UserDAO;
 
 @WebServlet("/GetNotice.do")
@@ -28,7 +28,7 @@ public class GetNoticeCtrl extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		int idx = 0 ;
-		NoticeDAOMySQL ndao = new NoticeDAOMySQL();
+		NoticeDAO ndao = new NoticeDAO();
 		NoticeDTO noti = new NoticeDTO();
 		noti = ndao.getNotice(idx);
 		String file1 = ""; 

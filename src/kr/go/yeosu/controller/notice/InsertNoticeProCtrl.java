@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.go.yeosu.dto.NoticeDTO;
-import kr.go.yeosu.model.NoticeDAOMySQL;
+import kr.go.yeosu.model.NoticeDAO;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -53,10 +53,10 @@ public class InsertNoticeProCtrl extends HttpServlet {
 			title = multi.getParameter("title");
 			content = multi.getParameter("content");
 		} catch (Exception e) {
-			System.out.print("예외 발생 : " + e);
+			System.out.println("예외 발생 : " + e);
 		}
 		
-		NoticeDAOMySQL ndao = new NoticeDAOMySQL();
+		NoticeDAO ndao = new NoticeDAO();
 		NoticeDTO noti = new NoticeDTO();
 		noti.setTitle(title);
 		noti.setContent(content);

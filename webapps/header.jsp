@@ -6,29 +6,12 @@
 	String sid = "";
 	if(session!=null) sid = (String) session.getAttribute("sid");  
 %>
-<header id="hd" class="container is-widescreen">
+<header id="hd" class="container">
 	<div class="container-fluid">
 		<nav id="tnb" class="navbar navbar-default">
-			<div class="columns">
-				  <div class="column">
-				    <a href=${path}/NoticeList.do >관광명소</a>
-				  </div>
-				  <div class="column">
-				    <a href="#" >문화/축제</a>
-				  </div>
-				  <div class="column">
-				    <a href="#" >숙박/음식/쇼핑</a>
-				  </div>
-				  <div class="column">
-				   <a href="#" >여행/체험</a>
-				  </div>
-				  <div class="column">
-				   <a href="#" >관광안내</a>
-				  </div>
-				</div>
 			<ul class="nav navbar-nav navbar-right" style="padding-right:40px">
 				<c:if test="${!empty sid && sid!='admin'}">			
-					<li><a href="${path }/MyPage.do">마이페이지</a></li>						
+					<li><a href="${path }/MyPage.do">마이페이지</a></li>									
 					<li><a href="${path }/UserLogout.do">로그아웃</a></li>	
 				</c:if>
 				<c:if test="${empty sid }">
@@ -46,76 +29,18 @@
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a class="navbar-brand"  href="${path}/ ">MYSHOP</a>
-		    </div>
-		
+		    <div class="navbar-header">		    
+		      <a class="navbar-brand"  href="${path}/ ">여수 문화관광</a>
+		    </div>	
+		    
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">		       		        
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">사료 <span class="caret"></span></a>
-		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="${path1 }/ProductList.do?cate=0101">어덜트</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0102">퍼피</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0103">시니어</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0104">소프트사료</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0105">습식</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0106">샘플</a></li>		           
-		          </ul>
-	          	</li>		          		       
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">간식 <span class="caret"></span></a>
-		          <ul class="dropdown-menu" role="menu">
-		          	<li><a href="${path1 }/ProductList.do?cate=0201">수제간식</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0202">덴탈껌</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0203">뼈간식</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0204">개껌</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0205">영양제</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0206">육포/저키</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0207">캔/파우치</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0208">우유/음료</a></li>		
-		          </ul>
-		        </li>
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">건강관리 <span class="caret"></span></a>
-		          <ul class="dropdown-menu" role="menu">
-		          	<li><a href="${path1 }/ProductList.do?cate=0301">위생용품</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0302">칫솔/치약</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0303">미용/관리</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0304">목용용품</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0305">산책용품</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0306">사료통/급식기</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0307">넥카라/수술</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0308">스텝/매트</a></li>		
-		          </ul>
-		        </li>
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">기타용품 <span class="caret"></span></a>
-		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="${path1 }/ProductList.do?cate=0401">배변용품</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0402">장난감</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0403">훈련용품</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0404">하우스/방석</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0405">이동장/유모차</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0406">가방/카시트</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0407">의류/악세사리</a></li>
-		            <li><a href="${path1 }/ProductList.do?cate=0408">파티</a></li>		
-		          </ul>
-		        </li>	
-		        <li class="dropdown">
-     		    	<a href="${path }/NoticeList.do"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">커뮤니티 <span class="caret"></span></a>
-			        <ul class="dropdown-menu" role="menu">
+		         <li>     		    	
+			        <ul>
 			            <li><a href="${path1 }/NoticeList.do">Notice - 공지사항</a></li>
 			            <li><a href="${path1 }/FaqList.do">FAQ - 자주하는 질문</a></li>
-			            <li><a href="${path1 }/QnaList.do">QnA - 묻고 답하기</a></li>
-			            <li class="divider"></li>
+			            <li><a href="${path1 }/QnaList.do">QnA - 묻고 답하기</a></li>			       
 			            <li><a href="${path1 }/ReviewList.do">Review - 이용후기</a></li>
 			            <li><a href="${path1 }/DataList.do">자료실</a></li>
 			        </ul>

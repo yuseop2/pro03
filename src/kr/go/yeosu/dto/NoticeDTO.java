@@ -1,7 +1,5 @@
 package kr.go.yeosu.dto;
 
-import java.util.Date;
-
 public class NoticeDTO {
 	private int idx;
 	private String title;
@@ -10,12 +8,7 @@ public class NoticeDTO {
 	private String file1;
 	private String resdate;
 	private int readcnt;	
-	
-	public NoticeDTO(){
-		Date now = new Date();
-			this.resdate = now.toString();
-	}
-		
+				
 	public int getIdx() {return idx;}
 	public void setIdx(int idx) {this.idx = idx;}
 	

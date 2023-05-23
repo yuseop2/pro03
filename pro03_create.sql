@@ -12,8 +12,9 @@ select * from sample1;
 -- drop table sample1;
 -- 자동 커밋이 설정되어 있으므로 커밋하지 않아도 됨
 commit;
-select * from tbl_notice;
-drop table tbl_notice;
+select * from cate;
+select * from tbl_review;
+drop table tbl_review;
 
 -- ALTER TABLE sequence_table auto_increment=1; (MYSQL AUTO_INCREMENT 초기화)
 -- auto_increment (시퀀스역할)
@@ -21,4 +22,16 @@ drop table tbl_notice;
 create table tbl_user(id varchar(20) primary key, pw varchar(300) not null, name varchar(20), phone varchar(13), addr varchar(300), email varchar(50), resdate datetime default current_timestamp);
 create table tbl_notice(idx int auto_increment primary key, title varchar(100) not null, content varchar(1000), author varchar(20), file1 varchar(200), resdate datetime default current_timestamp, readcnt int default 0);
 create table tbl_place(pcode varchar(20) primary key, pname varchar(20), cate varchar(6), addr varchar(300), phone varchar(13), comm varchar(1000), pic varchar(200));
-create table cate(cate varchar(6), gname varchar(50), cname varchar(50));
+create table tbl_cate(cate varchar(6), gname varchar(50), cname varchar(50));
+create table tbl_review(
+	r_num int auto_increment primary key, 
+	cate varchar(20),
+	pcode varchar(20),
+	id varchar(20),
+	review varchar(500),
+	pic varchar(150),
+	resdate datetime default current_timestamp	
+	);
+
+
+
