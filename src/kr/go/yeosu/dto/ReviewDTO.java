@@ -7,7 +7,7 @@ public class ReviewDTO {
 	private String id;
 	private String review;
 	private String pic;
-	private String resdate;
+	private String regdate;
 	
 	public int getR_num() {
 		return r_num;
@@ -45,10 +45,11 @@ public class ReviewDTO {
 	public void setPic(String pic) {
 		this.pic = pic;
 	}
-	public String getResdate() {
-		return resdate;
+	public String getRegdate() {
+		return regdate;
 	}
-	public void setResdate(String resdate) {
-		this.resdate = resdate;
-	}		
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+	
 }

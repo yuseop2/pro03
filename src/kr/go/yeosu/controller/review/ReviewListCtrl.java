@@ -10,17 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/AdminReviewList.do")
-public class AdminReviewListCtrl extends HttpServlet {
+import kr.go.yeosu.dto.ReviewDTO;
+import kr.go.yeosu.model.ReviewDAO;
+
+@WebServlet("/ReviewList.do")
+public class ReviewListCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ReviewDAO rdao = new ReviewDAO();
-		ArrayList<Review> rList = rdao.getAllReview();
+		ArrayList<ReviewDTO> reviewList = new ArrayList<ReviewDTO>();
+		reviewList = rdao.reviewListAll();
+		request.setAttribute("reviewList", reviewList);
 		
-		request.setAttribute("rList", rList);
-		//디스패치로 view를 생성하여 proList.jsp로 요청 받은 proList를 포워드
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/admin/reviewList.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/review/reviewList.jsp");
 		view.forward(request, response);
 	}
 }

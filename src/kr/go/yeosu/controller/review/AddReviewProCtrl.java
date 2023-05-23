@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.go.yeosu.dto.ReviewDTO;
+import kr.go.yeosu.model.ReviewDAO;
+
 @WebServlet("/AddReviewPro.do")
 public class AddReviewProCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -17,8 +20,7 @@ public class AddReviewProCtrl extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		ReviewDAO dao = new ReviewDAO();
-		Review rev = new Review();
-		rev.setW_num(dao.getW_numGenerator());
+		ReviewDTO rev = new ReviewDTO();
 		
 		String id = request.getParameter("id"); 
 		rev.setId(id);

@@ -34,7 +34,7 @@
 <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
 <!-- bulma 로딩 -->
-<link href="${path }/source/bulma.css" rel="stylesheet">
+<link href="${path }/source/bulma.min.css" rel="stylesheet">
 
 <!-- jquery 로딩-->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
