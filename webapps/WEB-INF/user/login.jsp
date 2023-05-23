@@ -10,7 +10,7 @@
 <%@ include file="../../common.jsp" %>
 <title>회원 로그인 하기</title>
 <style>
-.container-fluid { width:1280px; }
+
 #fileSel1:checked ~ #file1 { display:none; }
 #fileSel2:checked ~ #file1 { display:block; }
 </style>

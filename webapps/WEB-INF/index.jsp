@@ -13,6 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>메인 페이지</title>    
   </head>
+<style>
+.section {width:1280px; height: auto; margin: 0 auto;}
+</style>
   <body>
   <%@ include file="../header.jsp" %>
   <section class="section">

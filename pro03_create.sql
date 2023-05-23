@@ -1,5 +1,9 @@
 select * from mysql.user;
 show databases;
+
+use mysql;
+show tables;
+
 use yeosu;
 set AUTOCOMMIT=true;	-- 자동커밋 설정
 show variables like 'autocommit';	-- 자동커밋 설정 확인
@@ -12,9 +16,9 @@ select * from sample1;
 -- drop table sample1;
 -- 자동 커밋이 설정되어 있으므로 커밋하지 않아도 됨
 commit;
-select * from tbl_place;
+select * from tbl_cate;
 select * from tbl_user;
-drop table tbl_user;
+drop table tbl_notice;
 update tbl_user set pw='AzaFmHR7eWzz4yfbglJAwGOLIC/CoGjqcg0EUIUhd1lvxnrEgFDD1uVoLqZWmuN+8UFDJg=='where id = 'lys24';
 
 -- ALTER TABLE sequence_table auto_increment=1; (MYSQL AUTO_INCREMENT 초기화)
