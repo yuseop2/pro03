@@ -18,7 +18,7 @@ select * from sample1;
 commit;
 select * from tbl_cate;
 select * from tbl_user;
-drop table tbl_notice;
+drop table tbl_cate;
 update tbl_user set pw='AzaFmHR7eWzz4yfbglJAwGOLIC/CoGjqcg0EUIUhd1lvxnrEgFDD1uVoLqZWmuN+8UFDJg=='where id = 'lys24';
 
 -- ALTER TABLE sequence_table auto_increment=1; (MYSQL AUTO_INCREMENT 초기화)

@@ -60,11 +60,12 @@
 			</tbody>
 		</table>
 		<div class="btn-group">
-			<a href="${path1 }/NoticeList.do" class="btn btn-primary">글 목록</a>
-			<a href="${path1 }/InsertNotice.do" class="btn btn-primary">글 등록</a>
-			<%-- 로그인한 사람의 이름이나 작성자이거나 관리자와 같은 경우 편집 및 삭제 가능 --%>
-			<a href="${path1 }/UpdateNotice.do?idx=${noti.idx }" class="btn btn-primary">글 변경</a>
-			<a href="${path1 }/DelNotice.do?idx=${noti.idx }" class="btn btn-primary">글 삭제</a>
+			<div class="buttons">
+				<a class="button is-info" href="${path1 }/NoticeList.do">글 목록</a>
+				<a class="button is-info" href="${path1 }/InsertNotice.do">글 등록</a>
+				<a class="button is-info" href="${path1 }/UpdateNotice.do?idx=${noti.idx }">글 변경</a>
+				<a class="button is-info" href="${path1 }/DelNotice.do?idx=${noti.idx }">글 삭제</a>
+			</div>		
 		</div>
 	</div>
 </div>

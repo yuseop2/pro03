@@ -42,13 +42,13 @@ public class ReviewDAO {
 		return reviewList;
 	}
 		
-	public ReviewDTO getReview(int r_num){
+	public ReviewDTO getPcodeByReview(String pcode){
 		ReviewDTO rev = new ReviewDTO();
 		
 		try {
 			con = MySQL8.getConnection();
 			pstmt = con.prepareStatement(MySQL8.REVIEW_SELECT_ONE);
-			pstmt.setInt(1, r_num);
+			pstmt.setString(1, pcode);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				rev.setR_num(rs.getInt("r_num"));

@@ -22,8 +22,8 @@ insert into tbl_place values( '04030001', '웅천친수공원텐트촌' , '0403'
 
 -- tbl_cate(카테)
 insert into tbl_cate values( '0101' , '명소주제별' , '섬/해변' );
-insert into tbl_cate values( '0202' , '명소주제별' , '산/사찰' );
-insert into tbl_cate values( '0303' , '명소주제별' , '문화/경승지' );
+insert into tbl_cate values( '0102' , '명소주제별' , '산/사찰' );
+insert into tbl_cate values( '0103' , '명소주제별' , '문화/경승지' );
 insert into tbl_cate values( '0201' , '전시회장소별' , '엑스포아트갤러리' );
 insert into tbl_cate values( '0202' , '전시회장소별' , '달빛갤러리' );
 insert into tbl_cate values( '0203' , '전시회장소별' , '시민회관' );

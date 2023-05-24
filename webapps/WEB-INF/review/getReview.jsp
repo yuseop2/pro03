@@ -24,23 +24,23 @@
 			<tbody>
 				<tr>
 					<th>글번호</th>
-					<td>	${rev.r_num }</td>
+					<td>${rev.r_num }</td>
 				</tr>
 				<tr>
 					<th>카테고리 번호</th>
-					<td>	${rev.cate }</td>
+					<td>${rev.cate }</td>
 				</tr>
 				<tr>
 					<th>장소코드</th>
-					<td>	${rev.pcode }</td>
+					<td>${rev.pcode }</td>
 				</tr>
 				<tr>
 					<th>작성자 아이디</th>
-					<td>	${rev.id }</td>
+					<td>${rev.id }</td>
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td>	${rev.review }</td>
+					<td>${rev.review }</td>
 				</tr>				
 				<tr>
 					<th>작성일</th>
@@ -62,11 +62,13 @@
 			</tbody>
 		</table>		
 		<div class="btn-group">
-			<a href="${path1 }/ReviewList.do" class="btn btn-primary">리뷰 목록</a>
-			<a href="${path1 }/AddReview.do" class="btn btn-primary">리뷰 등록</a>
-			<%-- 로그인한 사람의 이름이나 작성자이거나 관리자와 같은 경우 편집 및 삭제 가능 --%>
-			<a href="${path1 }/UpdateReview.do?r_num=${rev.r_num }" class="btn btn-primary">글 변경</a>
-			<a href="${path1 }/DelReview.do?r_num=${rev.r_num }" class="btn btn-primary">글 삭제</a>
+			<div class="buttons">
+				<a class="button is-info" href="${path1 }/ReviewList.do">리뷰 목록</a>
+				<a class="button is-info" href="${path1 }/AddReview.do">리뷰 등록</a>
+				<%-- 로그인한 사람의 이름이나 작성자이거나 관리자와 같은 경우 편집 및 삭제 가능 --%>
+				<a class="button is-info" href="${path1 }/UpdateReview.do?r_num=${rev.r_num }">글 변경</a>
+				<a class="button is-info" href="${path1 }/DelReview.do?r_num=${rev.r_num }">글 삭제</a> 				
+			</div>
 		</div>
 	</div>
 </div>
