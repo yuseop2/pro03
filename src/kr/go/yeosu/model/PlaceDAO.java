@@ -78,8 +78,8 @@ public class PlaceDAO {
 		ArrayList<PlaceDTO> placeList = new ArrayList<PlaceDTO>();
 		try {
 			con = MySQL8.getConnection();
-			pstmt = con.prepareStatement(MySQL8.PLACE_CATE_SELECT);
-			pstmt.setString(1, cate);
+			pstmt = con.prepareStatement(MySQL8.PLACE_CATE_SELECT2);
+			pstmt.setString(1, cate+"%");
 			rs = pstmt.executeQuery();
 			while(rs.next()){
 				PlaceDTO place = new PlaceDTO();
@@ -135,17 +135,25 @@ public class PlaceDAO {
 	//카테고리 로딩
 	public HashMap<String, String> getCategory(String cate) {
 		HashMap<String, String> cateMap = new HashMap<String, String>();
-		String gname= "";
+		String key = "";
 		String cname = "";
-		
+		String grp = "";
+		String group = "";
+		String code = "";
+		String codename = "";
 		try {
 			con = MySQL8.getConnection();
 			pstmt = con.prepareStatement(MySQL8.PLACE_CNAME_SELECT);
 			pstmt.setString(1, cate);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
-				gname = rs.getString("gname");
+				code = "cate";
+				codename = rs.getString("cate");
+				key = "cname";
 				cname = rs.getString("cname");
+				grp = "group";
+				group = rs.getString("gname");	
+				
 			}
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
 			e.printStackTrace();
@@ -155,8 +163,10 @@ public class PlaceDAO {
 			e.printStackTrace();
 		} finally {
 			MySQL8.close(rs, pstmt, con);
-		}		
-		cateMap.put(gname, cname);
+		}
+		cateMap.put(code, codename);
+		cateMap.put(key, cname);
+		cateMap.put(grp, group);
 		return cateMap;
 	}
 	
@@ -169,7 +179,7 @@ public class PlaceDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()){
 				CategoryVO cate = new CategoryVO();
-				cate.setCate(rs.getString("ct"));
+				cate.setCt(rs.getString("ct"));
 				cate.setGname(rs.getString("gname"));				
 				cateList.add(cate);
 			}
@@ -189,11 +199,12 @@ public class PlaceDAO {
 		try {
 			con = MySQL8.getConnection();
 			pstmt = con.prepareStatement(MySQL8.SECOND_CATEGORY_SELECT);
-			pstmt.setString(1, ct);
+			pstmt.setString(1, ct+"%");
 			rs = pstmt.executeQuery();
 			while(rs.next()){
 				CategoryVO cate = new CategoryVO();
 				cate.setCate(rs.getString("cate"));
+				cate.setGname(rs.getString("gname"));
 				cate.setCname(rs.getString("cname"));
 				cateList.add(cate);
 			}

@@ -26,9 +26,9 @@ public class PlaceListCtrl extends HttpServlet {
 		if(cate==null){
 			placeList = dao.getPlaceList();
 			cate = "0101";
-			cateMap.put("catename","전체");
+			cateMap.put("cname","전체");
 		} else {
-			placeList = dao.AdminCatePlaceList(cate);
+			placeList = dao.catePlaceList(cate);
 			cateMap = dao.getCategory(cate);
 		}		
 	
@@ -36,7 +36,7 @@ public class PlaceListCtrl extends HttpServlet {
 		request.setAttribute("cateMap", cateMap);
 		
 		//디스패치로 view를 생성하여 getNotice.jsp로 요청 받은 noti를 포워드
-		RequestDispatcher view = request.getRequestDispatcher("/place/proList.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/place/placeList.jsp");
 		view.forward(request, response);
 	}
 }

@@ -16,8 +16,8 @@ select * from sample1;
 -- drop table sample1;
 -- 자동 커밋이 설정되어 있으므로 커밋하지 않아도 됨
 commit;
+select * from tbl_place;
 select * from tbl_cate;
-select * from tbl_user;
 drop table tbl_cate;
 update tbl_user set pw='AzaFmHR7eWzz4yfbglJAwGOLIC/CoGjqcg0EUIUhd1lvxnrEgFDD1uVoLqZWmuN+8UFDJg=='where id = 'lys24';
 
@@ -38,5 +38,6 @@ create table tbl_review(
 	regdate datetime default current_timestamp	
 	);
 
+select cate, cname, gname from tbl_cate where cate like '01'||'%' order by cate;
 
-
+select * from tbl_cate where cate='0101';

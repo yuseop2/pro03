@@ -23,6 +23,11 @@ public class InsertPlaceCtrl extends HttpServlet {
 		PlaceDAO dao = new PlaceDAO();
 		ArrayList<CategoryVO> cateList = dao.getFirstCategoryList(); 
 		
+		for(CategoryVO cate : cateList){
+			System.out.println(cate.getCt());
+			System.out.println(cate.getGname());
+		}
+		
 		request.setAttribute("cateList", cateList);
 		request.setAttribute("msg", msg);
 		

@@ -27,13 +27,13 @@
      		<a class="navbar-item">
           	  여수10경
          	</a>
-          	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0101">
+          	<a class="navbar-item" href="${path }/PlaceList.do?cate=0101">
           	  섬/해변
          	</a>
-        	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0102">
+        	<a class="navbar-item" href="${path }/PlaceList.do?cate=0102">
          	  산/사찰
          	</a>
-         	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0103">
+         	<a class="navbar-item" href="${path }/PlaceList.do?cate=0103">
          	  문화/경승지
          	</a>
          </div>
@@ -46,13 +46,13 @@
      		<a class="navbar-item" >
           	  	주요축제
          	</a>         	
-          	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0201">
+          	<a class="navbar-item" href="${path }/PlaceList.do?cate=0201">
           	 	엑스포아트갤러리소식
          	</a>
-         	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0202">
+         	<a class="navbar-item" href="${path }/PlaceList.do?cate=0202">
           	 	달빛갤러리소식 
          	</a>
-         	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0203">
+         	<a class="navbar-item" href="${path }/PlaceList.do?cate=0203">
           	 	시민회관소식 
          	</a>       	
          </div>
@@ -65,13 +65,13 @@
      		<a class="navbar-item">
           		여수10미
          	</a>
-     		<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0301">
+     		<a class="navbar-item" href="${path }/PlaceList.do?cate=0301">
           		음식점
          	</a>
-          	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0302">
+          	<a class="navbar-item" href="${path }/PlaceList.do?cate=0302">
           	 	숙박
          	</a>
-        	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0303">
+        	<a class="navbar-item" href="${path }/PlaceList.do?cate=0303">
          		쇼핑
          	</a>
          </div>
@@ -81,13 +81,13 @@
 			여행/체험
       	 </a>
       	 <div class="navbar-dropdown">
-     		<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0401">
+     		<a class="navbar-item" href="${path }/PlaceList.do?cate=0401">
           		관람
          	</a>
-          	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0402">
+          	<a class="navbar-item" href="${path }/PlaceList.do?cate=0402">
           		레저
          	</a>
-        	<a class="navbar-item" href="${path }/CatePlaceList.do?cate=0403">
+        	<a class="navbar-item" href="${path }/PlaceList.do?cate=0403">
           		캠핑
          	</a>
          </div>

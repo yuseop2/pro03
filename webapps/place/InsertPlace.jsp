@@ -116,7 +116,7 @@
 						$("#cate").empty();
 						$("#cate").append("<option value=''>선택안함</option>");
 						for(var c in ctList){
-							$("#cate").append("<option value='"+ctList[c]["cate"]+"'>"+ctList[c]["catename"]+"</option>");
+							$("#cate").append("<option value='"+ctList[c]["cate"]+"'>"+ctList[c]["cname"]+"</option>");
 						}
 					}
 				});				

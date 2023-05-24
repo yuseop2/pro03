@@ -26,7 +26,14 @@ border:1px solid #e0e0f0; text-align:center; }
 <%@ include file="../../header.jsp" %>
 <div class="content" style="padding-top:30px; margin-top:30px; border-top:3px solid #333; min-height:500px; ">
 	<div class="container-fluid">
-		<h2>장소 - ${cateMap.catename }</h2>
+		<h2>장소 > 
+		<c:if test="${empty cateMap.group }">
+		전체
+		</c:if>
+		<c:if test="${!empty cateMap.group }">
+		${cateMap.group } > ${cateMap.cname }
+		</c:if>
+		</h2>
 		<hr>
 		<c:if test="${sid.equals('admin') }">
 			<div class="buttons">
