@@ -30,8 +30,7 @@ public class CatePlaceListCtrl extends HttpServlet {
 		} else if(cate1==null){
 			placeList = dao.getPlaceList();
 			cate1 = "0101";
-			cateMap.put("gname", "전체");	
-			cateMap.put("cname", "전체");			
+					
 		}
 		
 		placeList = dao.catePlaceList(cate);

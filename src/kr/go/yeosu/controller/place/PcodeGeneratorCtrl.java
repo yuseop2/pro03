@@ -13,8 +13,8 @@ import kr.go.yeosu.model.PlaceDAO;
 
 import org.json.JSONObject;
 
-@WebServlet("/ProductCodeGenerator.do")
-public class ProductCodeGeneratorCtrl extends HttpServlet {
+@WebServlet("/PcodeGenerator.do")
+public class PcodeGeneratorCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

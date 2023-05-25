@@ -8,7 +8,7 @@
 <html>
 <head>
 <%@ include file="../../common.jsp" %>
-<title>상품 등록하기</title>
+<title>장소 등록하기</title>
 <style>
 .container-fluid { width:1280px; }
 </style>
@@ -28,38 +28,43 @@
 							<span id="pcodetxt"></span>
 						</th>
 						<td>
-							대분류 : 
-							<select id="cate1" name="cate1" class="form-control">
-								<option value="">선택안함</option>
-								<c:forEach items="${cateList }" var="cate1">
-								<option value="${cate1.ct }">${cate1.gname }</option>
-								</c:forEach>
-							</select>
+							대분류 : 							
+							<div class="select is-info">
+								<select id="cate1" name="cate1" class="form-control">
+							    	<option value="">선택안함</option>
+							    	<c:forEach items="${cateList }" var="cate1">
+										<option value="${cate1.ct }">${cate1.gname }</option>
+									</c:forEach>							    
+								</select>
+							</div>
+													
 							소분류 : 
-							<select id="cate" name="cate" class="form-control">
-								<option value="">선택안함</option>
-							</select><br>
+							<div class="select is-info">
+								<select id="cate" name="cate" class="form-control">
+									<option value="">선택안함</option>
+								</select>
+							</div>
 							<input type="hidden" id="pcode" name="pcode" value="">
-							<input type="hidden" id="pcodeck" name="pcodeck" value="no">
-							<input type="button" value="카테고리 번호 발급" class="btn btn-primary" onclick="PcodeGenerator()">
+							<input type="hidden" id="pcodeck" name="pcodeck" value="no">							
+							<input class="button is-info" type="button" value="카테고리 번호 발급" onclick="getPcodeGenerator()">							
 						</td>
 					</tr>
 					<tr>
-						<th><label for="pname">장소명 (예: 장소명 - 카테고리명)</label></th>
+						<th><label for="pname">장소명</label></th>
 						<td>
-							<input type="text" name="pname" id="pname" maxlength="100" title="규칙에 맞게 작성" placeholder="규칙에 맞게 작성" >
+							<input type="text" name="pname" id="pname" maxlength="100" title="" placeholder="" >
 						</td>
 					</tr>
 					<tr>
 						<th><label for="addr">주소 </label></th>
 						<td>
-							<input type="text" name="weight" id="weight" maxlength="100" title="100글자이내" placeholder="100글자이내" >
+							<input type="text" name="addr" id="addr" maxlength="100" title="100글자이내" placeholder="100글자이내" >
 						</td>
 					</tr>
 					<tr>
 						<th><label for="phone">전화번호 </label></th>
 						<td>
-							<input type="number" name="phone" id="phone" maxlength="13" >
+							<input type="text" name="phone" id="phone" placeholder="ex)010-0000-1111" maxlength="13" >
 						</td>
 					</tr>
 					<tr>
@@ -71,13 +76,14 @@
 					<tr>
 						<th><label for="pic">사진 첨부</label></th>
 						<td>
-							<input type="file" name="pic" id="pic" class="">
+							<input class="button" type="file" name="pic" id="pic" value="파일 선택">
+							
 						</td>
 					</tr>								
 					<tr>
-						<td colspan="2">
-							<input type="submit" value="장소 등록하기" class="btn btn-primary">
-							<a href="${path1 }/PlaceList.do" class="btn btn-primary">장소 목록</a>				
+						<td colspan="2">																			
+							<input class="button is-info" type="submit" value="장소 등록하기">
+							<a class="button is-info" href="${path1 }/PlaceList.do" >장소 목록</a>								
 						</td>
 					</tr>
 				</tbody>
@@ -122,7 +128,7 @@
 				});				
 			});			
 		});
-		function PodeGenerator(){
+		function getPcodeGenerator(){
 			if($("#cate1").val()=="" || $("#cate").val()==""){
 				alert("대분류/소분류 카테고리를 선택하시기 바랍니다.");
 				$("#cate1").focus();
@@ -142,12 +148,12 @@
 					$("#pcodeck").val("yes");
 					$("#pcode").val(placeCode);
 					$("#pcodetxt").html("("+placeCode+")");
-					$("#msg").html("<strong>상품 코드가 발급되었습니다.</strong>");
+					$("#msg").html("<strong>장소 코드가 발급되었습니다.</strong>");
 					$("#pname").focus();
 				}
 			});
 		}
-		function productCheck(f){
+		function placeCheck(f){
 			if(f.pcodeck.value!="yes"){
 				alert("상품코드를 생성하지 않으셨습니다.");
 				return false;
