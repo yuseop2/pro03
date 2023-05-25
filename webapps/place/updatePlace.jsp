@@ -49,7 +49,19 @@
 						<td>
 							<input type="text" name="phone" id="phone" value="${place.phone }" min="0" max="5000000" step="100" title="0~5000000" class="form-control">
 						</td>
-					</tr>		
+					</tr>
+					<tr>
+						<th><label for="lat">위도</label></th>
+						<td>
+							<input type="text" name="lat" id="lat" value="${place.lat }"  step="100" title="0~5000000" class="form-control">
+						</td>
+					</tr>
+					<tr>
+						<th><label for="lng">경도</label></th>
+						<td>
+							<input type="text" name="lng" id="lng" value="${place.lng }"  step="100" title="0~5000000" class="form-control">
+						</td>
+					</tr>									
 					<tr>
 						<th><label for="comm">장소 설명</label></th>
 						<td>

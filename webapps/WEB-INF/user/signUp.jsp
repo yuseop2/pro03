@@ -27,7 +27,7 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 						<td>
 							<div class="form-row">
 								<input type="text" name="id" id="id" placeholder="영문소문자 및 숫자를 혼용하여 15글자 이내로 아이디 입력" 
-								class="form-control" pattern="^[a-z0-9]{8,16}" maxlength="15"
+								class="form-control" maxlength="15"
 								 style="width:80%;display:inline-block;" autofocus required />
 								<input type="button" class="btn btn-primary" value="아이디 중복 확인" onclick="idCheck()">
 								<input type="hidden" name="idck" id="idck" value="no">
@@ -61,12 +61,12 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 					</tr>
 					<tr>
 						<th>이메일</th>
-						<td><input type="email" name="email" id="email" placeholder="이메일 입력" class="form-control" required></td>
+						<td><input type="email" name="email" id="email" placeholder="이메일 입력" class="form-control" required /></td>
 					</tr>
 					<tr>
 						<th>연락처</th>
 						<td><input type="tel" name="phone" id="phone" maxlength="11" placeholder="전화번호 숫자만 입력 00000000000" 
-						class="form-control" required></td>
+						class="form-control" required /></td>
 					</tr>
 					<tr>
 						<th>주소</th>

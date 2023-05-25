@@ -49,8 +49,8 @@ public class MySQL8 {
 	public final static String SECOND_CATEGORY_SELECT = "select cate, cname, gname from tbl_cate where cate like ? order by cate";	//중분류코드반환
 	public final static String PCODE_GENERATOR = "select * from tbl_place where cate=? order by pcode desc limit 1";	//pcode 발생기
 	
-	public final static String INSERT_PLACE = "insert into tbl_place values (?, ?, ?, ?, ?, ?, ?)";
-	public final static String UPDATE_PLACE = "update tbl_place set pname=?, cate=?, addr=?, phone=?, comm=?, pic=? where pcode=?";
+	public final static String INSERT_PLACE = "insert into tbl_place values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	public final static String UPDATE_PLACE = "update tbl_place set pname=?, cate=?, addr=?, phone=?, comm=?, pic=? lat=?, lng=? where pcode=?";
 	public final static String DELETE_PLACE = "delete from tbl_place where pcode=?";
 	
 	//Review 관련 SQL
@@ -61,7 +61,18 @@ public class MySQL8 {
 	public final static String REVIEW_DELETE = "delete from tbl_review where r_num=?";
 		
 	//QnA 관련 SQL
-		
+	public final static String QNO_GENERATOR = "select * from qna order by qno desc limit 1 ;";
+	public final static String ADD_QNA = "insert into qna values (?,?,?,?,now(),1,?,0)";
+	public final static String ADD_REPLY = "insert into qna values (?,?,?,?,now(),2,?,0)";
+	public final static String QNA_LIST = "select * from qna order by parno desc, qno asc";
+	public final static String QNA_SELECT = "select * from qna where parno=? order by qno asc";
+	public final static String QNA_SELECT_ONE = "select * from qna where qno=?";
+	public final static String REPLY_LIST = "select * from qna where parno=? and lev=2 order by qno asc";
+	public final static String REPLY_SELECT = "select * from qna where parno=? and lev=2 order by qno asc";
+	public final static String REPLY_SELECT_ONE = "select * from qna where lev=2 and qno=? order by qno asc";
+	public final static String UPDATE_QNA = "update qna set title=?, content=? where qno=?";
+	public final static String DELETE_QNA = "delete from qna where parno=?";
+	public final static String DELETE_REPLY = "delete from qna where qno=?";	
 	
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {

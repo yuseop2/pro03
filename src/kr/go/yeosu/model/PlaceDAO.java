@@ -32,7 +32,9 @@ public class PlaceDAO {
 				place.setAddr(rs.getString("addr"));
 				place.setPhone(rs.getString("phone"));
 				place.setComm(rs.getString("comm"));
-				place.setPic(rs.getString("pic"));					
+				place.setPic(rs.getString("pic"));
+				place.setLat(rs.getDouble("lat"));
+				place.setLng(rs.getDouble("lng"));
 				placeList.add(place);
 			}
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
@@ -60,7 +62,9 @@ public class PlaceDAO {
 				place.setAddr(rs.getString("addr"));
 				place.setPhone(rs.getString("phone"));
 				place.setComm(rs.getString("comm"));
-				place.setPic(rs.getString("pic"));			
+				place.setPic(rs.getString("pic"));	
+				place.setLat(rs.getDouble("lat"));
+				place.setLng(rs.getDouble("lng"));
 			}
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
 			e.printStackTrace();
@@ -89,7 +93,9 @@ public class PlaceDAO {
 				place.setAddr(rs.getString("addr"));
 				place.setPhone(rs.getString("phone"));
 				place.setComm(rs.getString("comm"));
-				place.setPic(rs.getString("pic"));					
+				place.setPic(rs.getString("pic"));	
+				place.setLat(rs.getDouble("lat"));
+				place.setLng(rs.getDouble("lng"));
 				placeList.add(place);
 			}
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
@@ -118,7 +124,9 @@ public class PlaceDAO {
 				place.setAddr(rs.getString("addr"));
 				place.setPhone(rs.getString("phone"));
 				place.setComm(rs.getString("comm"));
-				place.setPic(rs.getString("pic"));					
+				place.setPic(rs.getString("pic"));	
+				place.setLat(rs.getDouble("lat"));
+				place.setLng(rs.getDouble("lng"));
 				placeList.add(place);
 			}
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
@@ -270,8 +278,10 @@ public class PlaceDAO {
 			pstmt.setString(3, place.getCate());
 			pstmt.setString(4, place.getAddr());
 			pstmt.setString(5, place.getPhone());
-			pstmt.setString(6, place.getComm());			
+			pstmt.setString(6, place.getComm());				
 			pstmt.setString(7, "/img/"+place.getPic());
+			pstmt.setDouble(8, place.getLat());
+			pstmt.setDouble(9, place.getLng());	
 			cnt = pstmt.executeUpdate();
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
 			e.printStackTrace();
@@ -296,7 +306,9 @@ public class PlaceDAO {
 			pstmt.setString(4, place.getPhone());
 			pstmt.setString(5, place.getComm());	
 			pstmt.setString(6, place.getPic());
-			pstmt.setString(7, place.getPcode());
+			pstmt.setDouble(7, place.getLat());
+			pstmt.setDouble(8, place.getLng());				
+			pstmt.setString(9, place.getPcode());
 			cnt = pstmt.executeUpdate();
 			
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생

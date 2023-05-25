@@ -68,6 +68,18 @@
 						</td>
 					</tr>
 					<tr>
+						<th><label for="lat">위도 </label></th>
+						<td>
+							<input type="text" name="lat" id="lat" placeholder="ex)57.5556667" maxlength="20" >
+						</td>
+					</tr>
+					<tr>
+						<th><label for="lng">경도 </label></th>
+						<td>
+							<input type="text" name="lng" id="lng" placeholder="ex)63.3334445" maxlength="20" >
+						</td>
+					</tr>
+					<tr>
 						<th><label for="comm">장소 설명 </label></th>
 						<td>
 							<textarea rows="5" cols="100" name="comm" id="comm" maxlength="300" title="300자 내로 작성" ></textarea>

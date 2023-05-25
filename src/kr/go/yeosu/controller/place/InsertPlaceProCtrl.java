@@ -39,6 +39,8 @@ public class InsertPlaceProCtrl extends HttpServlet {
 		String phone = "";
 		String comm = "";		
 		String fileName = "";
+		Double lat = null;
+		Double lng = null;
 			
 		//MultipartRequest의 옵션 내용
 		//1. request : 요청 받은 객체
@@ -58,7 +60,9 @@ public class InsertPlaceProCtrl extends HttpServlet {
 			cate = multi.getParameter("cate");
 			addr = multi.getParameter("addr");
 			phone = multi.getParameter("phone");
-			comm = multi.getParameter("comm");		
+			comm = multi.getParameter("comm");
+			lat = Double.parseDouble(multi.getParameter("lat"));
+			lng = Double.parseDouble(multi.getParameter("lng"));
 						
 		} catch (Exception e) {
 			System.out.print("예외 발생 : " + e);
@@ -71,7 +75,9 @@ public class InsertPlaceProCtrl extends HttpServlet {
 		place.setAddr(addr);
 		place.setPhone(phone);
 		place.setComm(comm);			
-		place.setPic(fileName);		
+		place.setPic(fileName);
+		place.setLat(lat);
+		place.setLng(lng);
 		
 		int cnt = dao.insertPlace(place);	
 		if(cnt==0){ //장소 등록실패

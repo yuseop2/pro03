@@ -73,13 +73,13 @@ public class UpdatePlaceProCtrl extends HttpServlet {
 			place.setPcode(pcode);
 			
 			cate = (multi.getParameter("cate1"));
-			place.setCate(multi.getParameter("cate1"));			
-			System.out.println(multi.getParameter("cate1"));
-			
+			place.setCate(multi.getParameter("cate1"));				
 			place.setPname(multi.getParameter("pname"));
 			place.setAddr(multi.getParameter("addr"));
 			place.setComm(multi.getParameter("comm"));			
 			place.setPhone(multi.getParameter("phone"));
+			place.setLat(Double.parseDouble(multi.getParameter("lat")));
+			place.setLng(Double.parseDouble(multi.getParameter("lng")));
 						
 		} catch (Exception e) {
 			System.out.print("예외 발생 : " + e);

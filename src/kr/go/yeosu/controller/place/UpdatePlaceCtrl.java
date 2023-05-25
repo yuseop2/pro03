@@ -28,7 +28,7 @@ public class UpdatePlaceCtrl extends HttpServlet {
 		String cate = place.getCate();	 
 		HashMap<String, String> cateMap = new HashMap<String, String>();  
 		cateMap = dao.getCategory(cate);
-		System.out.println("카테고리명 : "+cateMap.get("cname"));
+		
 		request.setAttribute("place", place);	//한 개의 상품 정보
 		request.setAttribute("cateMap", cateMap);	//카테고리 정보	
 		request.setAttribute("cname", cateMap.get("cname"));	//카테고리 정보

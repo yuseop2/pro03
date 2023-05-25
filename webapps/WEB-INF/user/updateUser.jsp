@@ -18,7 +18,7 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 <%@ include file="../../header.jsp" %>
 <div class="content" style="padding-top:30px; margin-top:30px; border-top:3px solid #333; min-height:500px; ">
 	<section class="container-fluid">
-		<h2 class="title">회원가입</h2>
+		<h2 class="title">회원 정보 수정</h2>
 		<form name="frm1" id="frm1" action="${path1 }/UpdateUserPro.do" method="post">
 			<table class="table">
 				<tbody>
@@ -26,23 +26,21 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 						<th>아이디</th>
 						<td>
 							<div class="form-row">
-								<input type="text" name="id" id="id" placeholder="영문소문자 및 숫자를 혼용하여 15글자 이내로 아이디 입력" class="form-control" pattern="^[a-z0-9]{8,16}" maxlength="15" style="width:80%;display:inline-block;" value="${user.id }" readonly />
+								<input type="text" name="id" id="id" placeholder="15글자 이내로 아이디 입력" class="form-control" maxlength="15" style="width:80%;display:inline-block;" value="${user.id }" readonly />
 							</div>
 						</td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>
 						<td>
-							<input type="password" name="pw" id="pw" placeholder="비밀번호 입력" class="form-control" maxlength="15" value="${user.pw }" required />
-							<p>비밀번호는 최소 8자리에서 최대 16자리까지 숫자, 영문, 특수문자 각 1개 이상 포함되어야 함</p>
+							<input type="password" name="pw" id="pw" placeholder="비밀번호 입력" class="form-control" maxlength="15" value="${user.pw }" required />							
 						</td>
 					</tr>
 					<tr>
 						<th>비밀번호 확인</th>
-						<td><input type="password" name="pw2" id="pw2" placeholder="비밀번호  확인 입력" class="form-control" maxlength="15" />
+						<td><input type="password" name="pw2" id="pw2" placeholder="비밀번호  확인 입력" class="form-control" maxlength="15" required />
 							<input type="hidden" name="hpw" id="hpw" value="${user.pw }" />
-						</td>
-						
+						</td>						
 					</tr>
 					<tr>
 						<th>회원이름</th>
@@ -61,8 +59,8 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 						<td>
 							<span style="display:block;">${user.addr }</span>
 							<input type="hidden" name="addr" id="addr" value="${user.addr }" />
-							<input type="text" name="address1" id="address1" placeholder="기본 주소 입력" class="form-control" /><br>
-							<input type="text" name="address2" id="address2" placeholder="상세 주소 입력" class="form-control" /><br>
+							<input type="text" name="address1" id="address1" placeholder="기본 주소 입력" class="form-control" required/><br>
+							<input type="text" name="address2" id="address2" placeholder="상세 주소 입력" class="form-control" required/><br>
 							<input type="text" name="postcode" id="postcode" style="width:160px;float:left;margin-right:20px;" placeholder="우편번호" class="form-control">
 							<button id="post_btn" onclick="findAddr()" class="btn btn-primary">우편번호 검색</button>
 						</td>

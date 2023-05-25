@@ -53,21 +53,18 @@ public class UpdateUserProCtrl extends HttpServlet {
 			user.setAddr(request.getParameter("addr"));
 		} else {
 			user.setAddr(request.getParameter("address1")+" "+request.getParameter("address2"));
-		}
-		
+		}		
 		UserDAO dao = new UserDAO();
 		int cnt = 0;
 		if(pw!=hpw){
 			cnt = dao.updateUser(user);
 		} else {
 			cnt = dao.updateUser2(user);
-		}
-		
+		}		
 		if(cnt>=1){
 			response.sendRedirect(request.getContextPath());
 		} else {
 			response.sendRedirect("UpdateUser.do?id="+id);
 		}
 	}
-
 }

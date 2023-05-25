@@ -150,11 +150,11 @@ public class UserDAO {
 						hpw+="*";
 					}
 					user.setPw(vpw+hpw);
+					user.setName(rs.getString("name"));
 					user.setPhone(rs.getString("Phone"));
 					user.setEmail(rs.getString("email"));
 					user.setRegdate(rs.getString("regdate"));
 					user.setAddr(rs.getString("addr"));
-
 				}
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
@@ -171,12 +171,12 @@ public class UserDAO {
 			try {
 				con = MySQL8.getConnection();
 				pstmt = con.prepareStatement(MySQL8.UPDATE_USER);
-				pstmt.setString(1, user.getId());
-				pstmt.setString(2, user.getPw());
-				pstmt.setString(3, user.getName());
-				pstmt.setString(4, user.getPhone());
-				pstmt.setString(5, user.getAddr());
-				pstmt.setString(6, user.getEmail());
+				pstmt.setString(1, user.getPw());
+				pstmt.setString(2, user.getName());
+				pstmt.setString(3, user.getPhone());
+				pstmt.setString(4, user.getAddr());
+				pstmt.setString(5, user.getEmail());
+				pstmt.setString(6, user.getId());
 				cnt = pstmt.executeUpdate();
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
