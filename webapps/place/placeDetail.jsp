@@ -42,13 +42,8 @@ td > img { width: 500px; height: 500px;}
 					<th>지도</th>
 					<td>
 						<div id="map" style="width:500px;height:400px;"></div>
-					<%-- 	<input type="hidden" id="addrlat" value="${place.lat}">
-						<input type="hidden" id="addrlng" value="${place.lng}"> --%>
-						<script>
-					/*	var lat = addrlat.val();
-						var lng = addrlng.val();						
-								alert("lat");
-								alert(lng); */
+				
+						<script>					
 						var container = document.getElementById('map');	//지도를 표시할 div
 						var options = {									
 							/* center: new kakao.maps.LatLng(33.450701, 126.570667),	//지도의 중심좌표  */
@@ -85,14 +80,14 @@ td > img { width: 500px; height: 500px;}
 				<tr>
 					<th>장소 설명</th>
 					<td>${place.comm }</td>
-				</tr>				
+				</tr>																
 				<tr>
 					<td colspan="2">
 						<div class="buttons">
 							<c:if test="${!sid.equals('admin')}">
 								<c:if test="${!empty sid}">
-									<a class="button is-info" href="${path1 }/UpdatePlace.do?pcode=${place.pcode }" >리뷰 쓰기</a>
-								</c:if>
+									<a class="button is-info" href="${path1 }/AddReview.do?pcode=${place.pcode }" >리뷰 쓰기</a>
+								</c:if>								
 								<a href="${path1 }/PlaceList.do?cate=${place.cate}" class="btn btn-primary" role="button">목록</a>
 							</c:if>
 							<c:if test="${sid.equals('admin') }">
@@ -110,19 +105,17 @@ td > img { width: 500px; height: 500px;}
 				<c:forEach var="rev" items="${rList }">
 				<tr>
 					<td>작성자 : ${rev.id }</td>
-					<td>내용 : ${rev.review }</td>
-					<td>만족도 : ${rev.rating }</td>
+					<td>내용 : ${rev.review }</td>					
 					<td>
 						<c:if test="${rev.id==sid }">
-						<div class="buttons">
-							<a class="button is-info" href="${path1 }/UpdateReview.do?w_num=${rev.w_num }" >이용후기 수정</a>
-						</div>
+							<a href="${path1 }/UpdateReview.do?w_num=${rev.w_num }" class="button is-info">이용후기 수정</a>
 						</c:if>
 					</td>
 				</tr>
 				</c:forEach>
 			</tbody>
-		</table>
+		</table>				
+		
 		<c:if test="${sid.equals('admin') }">
 		<div class="buttons">
 			<a class="button is-info" href="${path1 }/InsertPlace.do" >장소 등록</a>

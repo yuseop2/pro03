@@ -48,13 +48,14 @@ public class MySQL8 {
 	public final static String FIRST_CATEGORY_SELECT = "select distinct substr(cate,1,2) as ct, gname from tbl_cate group by substr(cate,1,2), gname order by ct";	//대분류코드반환
 	public final static String SECOND_CATEGORY_SELECT = "select cate, cname, gname from tbl_cate where cate like ? order by cate";	//중분류코드반환
 	public final static String PCODE_GENERATOR = "select * from tbl_place where cate=? order by pcode desc limit 1";	//pcode 발생기
-	
+
 	public final static String INSERT_PLACE = "insert into tbl_place values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	public final static String UPDATE_PLACE = "update tbl_place set pname=?, cate=?, addr=?, phone=?, comm=?, pic=? lat=?, lng=? where pcode=?";
 	public final static String DELETE_PLACE = "delete from tbl_place where pcode=?";
 	
 	//Review 관련 SQL
 	public final static String REVIEW_SELECT_ALL = "select * from tbl_review order by regdate desc";
+	public final static String REVIEW_SELECT_BYCATE = "select * from tbl_review where cate=?";
 	public final static String REVIEW_SELECT_ONE = "select * from tbl_review where pcode=?";
 	public final static String REVIEW_INSERT = "insert into tbl_review(cate, pcode, id, review, pic) values (?,?,?,?,?)";
 	public final static String REVIEW_UPDATE = "update tbl_review SET review=? where id=? and r_num=?";

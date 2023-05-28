@@ -55,9 +55,9 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 				</tr>
 				<tr>
 					<td colspan="2">
-						<a href="${path1 }/UpdateUser.do?id=${user.id}" class="btn btn-primary">회원 정보 수정</a>
-						<a href="${path1 }/DeleteUser.do?id=${user.id}" class="btn btn-primary">회원 탈퇴</a>
-						<a href="javascript:history.go(-1)" class="btn btn-primary">뒤로</a>						
+						<a class= "button is-info" href="${path1 }/UpdateUser.do?id=${user.id}" >회원 정보 수정</a>
+						<a class= "button is-info" href="${path1 }/DeleteUser.do?id=${user.id}" >회원 탈퇴</a>						
+						<a class= "button is-info" href="javascript:history.go(-1)" >뒤로</a>						
 					</td>
 				</tr>
 			</tbody>

@@ -60,8 +60,10 @@ public class InsertNoticeProCtrl extends HttpServlet {
 		NoticeDTO noti = new NoticeDTO();
 		noti.setTitle(title);
 		noti.setContent(content);
-		noti.setFile1(fileName);
 		noti.setAuthor(author);
+		noti.setFile1(fileName);
+		System.out.println(request.getParameter("author"));
+		System.out.println(request.getParameter("${sid }"));
 		int cnt = ndao.insertNotice(noti);	
 		if(cnt==0){ //글쓰기 실패
 			String msg = "공지사항을 글이 등록되지 못했습니다.";

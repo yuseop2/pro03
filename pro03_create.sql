@@ -17,8 +17,8 @@ select * from sample1;
 -- 자동 커밋이 설정되어 있으므로 커밋하지 않아도 됨
 commit;
 select * from tbl_place;
-select * from tbl_user;
-drop table tbl_place;
+select * from tbl_review;
+drop table tbl_review;
 update tbl_user set pw='rFPNhUtHXxUHGMVMhNXGplnn6v8C4wmdVeUZNGFX56+ikGqS1x5IPTor9R9njBr5aW8ISw=='where id = 'lys24';
 select * from tbl_place where cate=? order by pcode desc limit 1;
 -- ALTER TABLE sequence_table auto_increment=1; (MYSQL AUTO_INCREMENT 초기화)

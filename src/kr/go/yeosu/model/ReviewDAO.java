@@ -40,9 +40,39 @@ public class ReviewDAO {
 		}
 		MySQL8.close(rs, pstmt, con);
 		return reviewList;
+	}	
+	
+	public ArrayList<ReviewDTO> reviewListBycate(String cate){
+		ArrayList<ReviewDTO> reviewList = new ArrayList<ReviewDTO>();
+		try {
+			con = MySQL8.getConnection();
+			pstmt = con.prepareStatement(MySQL8.REVIEW_SELECT_BYCATE);
+			pstmt.setString(1, cate);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				ReviewDTO rev = new ReviewDTO();
+				rev.setR_num(rs.getInt("r_num"));
+				rev.setCate(rs.getString("cate"));
+				rev.setPcode(rs.getString("pcode"));
+				rev.setId(rs.getString("id"));
+				rev.setReview(rs.getString("review"));
+				rev.setPic(rs.getString("pic"));
+				rev.setRegdate(rs.getString("regdate"));
+				reviewList.add(rev);				
+			}
+		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
+			e.printStackTrace();
+		} catch (SQLException e){	//sql 구문이 틀린 경우 발생
+			e.printStackTrace();			
+		} catch (Exception e){	//알 수 없는 예외인 경우 발생
+			e.printStackTrace();
+		}
+		MySQL8.close(rs, pstmt, con);
+		return reviewList;
 	}
+	
 		
-	public ReviewDTO getPcodeByReview(String pcode){
+	public ReviewDTO reviewDetail(String pcode){
 		ReviewDTO rev = new ReviewDTO();
 		
 		try {

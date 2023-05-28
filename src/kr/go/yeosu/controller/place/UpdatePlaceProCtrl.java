@@ -36,8 +36,8 @@ public class UpdatePlaceProCtrl extends HttpServlet {
 		int n = 0;
 		String pcode = "";
 		String cate = "";
-		String[] fileName = new String[3];
-		String[] oriFileName = new String[3];
+		String fileName = "";
+		String oriFileName = "";
 		PlaceDAO dao = new PlaceDAO();
 		PlaceDTO place = new PlaceDTO();
 		
@@ -52,21 +52,11 @@ public class UpdatePlaceProCtrl extends HttpServlet {
 			MultipartRequest multi = new MultipartRequest(request, uploadFilePath, 
 					uploadFileSizeLimit, encType, new DefaultFileRenamePolicy());	
 			
-			Enumeration<?> files = multi.getFileNames();
-			while(files.hasMoreElements()) {
-				String file = (String) files.nextElement();
-				fileName[n] = multi.getFilesystemName(file);
-				//중복된 파일을 업로드할 경우 파일명이 바뀐다.
-				oriFileName[n] = multi.getOriginalFileName(file);
-				n++;
-			}
-			
-			String ori_pic = multi.getParameter("ori_pic");
-					
-			if (fileName[0] == null) { // 파일이 업로드 되지 않았을때
+			fileName = multi.getFileNames("file1");
+			if (fileName == null) { // 파일이 업로드 되지 않았을때
 				place.setPic(ori_pic);
 			} else {
-				place.setPic("/img/"+fileName[0]);
+				place.setPic("/img/"+fileName);
 			}
 			
 			pcode = multi.getParameter("pcode");				

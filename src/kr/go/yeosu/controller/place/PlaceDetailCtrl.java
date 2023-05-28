@@ -1,6 +1,7 @@
 package kr.go.yeosu.controller.place;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -31,7 +32,7 @@ public class PlaceDetailCtrl extends HttpServlet {
 		HashMap<String, String> cateMap = dao.getCategory(cate);
 				
 		ReviewDAO rdao = new ReviewDAO();
-		ReviewDTO rev = rdao.getPcodeByReview(pcode);
+		ArrayList<ReviewDTO> rev = rdao.reviewListBycate(cate);
 		
 		request.setAttribute("place", place);	//한 개의 상품 정보
 		request.setAttribute("cateMap", cateMap);	//카테고리 정보

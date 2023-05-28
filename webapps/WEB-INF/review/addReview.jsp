@@ -8,7 +8,7 @@
 <html>
 <head>
 <%@ include file="../../common.jsp" %>
-<title>구매후기 작성</title>
+<title>이용후기 작성</title>
 <style>
 .container-fluid { width:1280px; }
 </style>
@@ -17,20 +17,22 @@
 <%@ include file="../../header.jsp" %>
 <div class="content" style="padding-top:30px; margin-top:30px; border-top:3px solid #333; min-height:500px; ">
 	<div class="container-fluid">
-		<h2>구매후기</h2>
+		<h2>이용후기</h2>
 		<p>${msg }</p>
-		<form action="${path1 }/AddReviewPro.do" method="post">
-			<table class="table">
+		<form action="${path1 }/AddReviewPro.do" method="post" enctype="multipart/form-data">
+			<table class="table">			
 				<tbody>
 					<tr>
-						<th><label for="cate">카테고리번호</label></th>
+						<th>
+							장소명
+						</th>
 						<td>
-							<input type="hidden" name="id" id="id" value="${sid }">
-							<input type="text" name="cate" id="cate" maxlength="98" title="100자 내로 작성" placeholder="100자 내로 작성" class="form-control" required autofocus>
-						</td>
-					</tr>
+							<span id="pname">${place.pname }</span>													
+							<input type="hidden" name="id" id="id" value="${sid }">													
+						</td>						
+					</tr>					
 					<tr>
-						<th><label for="content">글 내용</label></th>
+						<th><label for="review">글 내용</label></th>
 						<td>
 							<textarea rows="10" cols="100" name="review" id="review" maxlength="990" title="1000자 내로 작성" class="form-control"></textarea>
 						</td>
@@ -38,13 +40,13 @@
 					<tr>
 						<th><label for="pic">후기 사진</label></th>
 						<td>
-							<input type="file" name="pic" id="pic" class="">
+							<input type="file" name="pic" id="pic" class="button is-info">
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="submit" value="글쓰기" class="btn btn-primary">
-							<a href="${path1 }/NoticeList.do" class="btn btn-primary">글 목록</a>				
+							<input type="submit" value="글쓰기" class="button is-info">
+							<a class="button is-info" href="${path1 }/GetReview.do" >리뷰 목록</a>				
 						</td>
 					</tr>
 				</tbody>

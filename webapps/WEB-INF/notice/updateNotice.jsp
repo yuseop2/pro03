@@ -71,8 +71,8 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="submit" value="글 수정" class="btn btn-primary">
-							<a href="${path1 }/NoticeList.do" class="btn btn-primary">글 목록</a>				
+							<input type="submit" value="글 수정" class="button is-info">
+							<a href="${path1 }/NoticeList.do" class="button is-info">글 목록</a>				
 						</td>
 					</tr>
 				</tbody>

@@ -63,11 +63,15 @@
 		</table>		
 		<div class="btn-group">
 			<div class="buttons">
-				<a class="button is-info" href="${path1 }/ReviewList.do">리뷰 목록</a>
-				<a class="button is-info" href="${path1 }/AddReview.do">리뷰 등록</a>
-				<%-- 로그인한 사람의 이름이나 작성자이거나 관리자와 같은 경우 편집 및 삭제 가능 --%>
-				<a class="button is-info" href="${path1 }/UpdateReview.do?r_num=${rev.r_num }">글 변경</a>
-				<a class="button is-info" href="${path1 }/DelReview.do?r_num=${rev.r_num }">글 삭제</a> 				
+				<c:if test="${!empty sid && sid!='admin'}">
+					<a class="button is-info" href="${path1 }/ReviewList.do">리뷰 목록</a>
+				</c:if>
+				<c:if test="${!empty sid && sid=='admin'}">
+					<a class="button is-info" href="${path1 }/AddReview.do">리뷰 등록</a>
+					<%-- 로그인한 사람의 이름이나 작성자이거나 관리자와 같은 경우 편집 및 삭제 가능 --%>
+					<a class="button is-info" href="${path1 }/UpdateReview.do?r_num=${rev.r_num }">글 변경</a>
+					<a class="button is-info" href="${path1 }/DelReview.do?r_num=${rev.r_num }">글 삭제</a> 
+				</c:if>				
 			</div>
 		</div>
 	</div>

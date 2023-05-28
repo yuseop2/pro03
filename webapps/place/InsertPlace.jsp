@@ -88,8 +88,7 @@
 					<tr>
 						<th><label for="pic">사진 첨부</label></th>
 						<td>
-							<input class="button" type="file" name="pic" id="pic" value="파일 선택">
-							
+							<input class="button" type="file" name="pic" id="pic" value="파일 선택">							
 						</td>
 					</tr>								
 					<tr>

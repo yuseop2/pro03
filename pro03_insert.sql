@@ -34,9 +34,12 @@ insert into tbl_cate values( '0401' , '체험주제별' , '관람'  );
 insert into tbl_cate values( '0402' , '체험주제별' , '레저'  );
 insert into tbl_cate values( '0403' , '체험주제별' , '캠핑'  );
 
--- tbl_review
 
-insert into tbl_review values(default, '0101', '0001', 'lys24', '너무 좋았어요', '/img/0401_aquaPlanet.png', default);
+
+-- tbl_review
+select * from tbl_review;
+desc tbl_review;	
+insert into tbl_review values( default , '0101' , '01010001' , 'lys24' , '너무 좋았어요' , '/img/event1.png' , default );
 
 
 

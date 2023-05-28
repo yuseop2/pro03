@@ -33,7 +33,7 @@
 					<td>${rev.id }</td>
 					<td><a href="${path1 }/GetReview.do?r_num=${rev.r_num }" >${rev.review }</a></td>					
 					<td>						
-						<a href="${path1 }/DelReview.do?r_num=${rev.r_num }" class="btn btn-primary">삭제</a>
+						<a href="${path1 }/DelReview.do?r_num=${rev.r_num }" class="button is-info">삭제</a>
 					</td>
 				</tr>
 				</c:forEach>

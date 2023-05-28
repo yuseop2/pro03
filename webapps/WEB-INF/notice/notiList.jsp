@@ -42,7 +42,7 @@
 			</tbody>
 		</table>
 		<div class="btn-group">
-			<a href="${path1 }/InsertNotice.do" class="btn btn-primary">글 등록</a>
+			<a class="button is-info" href="${path1 }/InsertNotice.do" >글 등록</a>
 		</div>
 	</div>
 </div>
