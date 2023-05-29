@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.go.yeosu.dto.ReviewDTO;
+import kr.go.yeosu.model.ReviewDAO;
+
 @WebServlet("/UpdateReview.do")
 public class UpdateReviewCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -16,10 +19,10 @@ public class UpdateReviewCtrl extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		String w_num = request.getParameter("w_num");
+		int r_num = Integer.parseInt(request.getParameter("r_num"));
 		
 		ReviewDAO dao = new ReviewDAO();
-		Review rev = dao.getW_numByReview(w_num);
+		ReviewDTO rev = dao.reviewDetail(r_num);
 		
 		request.setAttribute("rev", rev);
 		

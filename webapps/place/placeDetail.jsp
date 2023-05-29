@@ -26,9 +26,10 @@ td > img { width: 500px; height: 500px;}
 		<table class="table">
 			<tbody>
 				<tr>
+					<th>사진</th>
 					<td colspan="2">
 						<img src='${path1 }/place${place.pic }' alt="${place.pname }"/>
-					</td>
+					</td>					
 				</tr>
 				<tr>
 					<th>장소명(장소코드)</th>
@@ -108,7 +109,7 @@ td > img { width: 500px; height: 500px;}
 					<td>내용 : ${rev.review }</td>					
 					<td>
 						<c:if test="${rev.id==sid }">
-							<a href="${path1 }/UpdateReview.do?w_num=${rev.w_num }" class="button is-info">이용후기 수정</a>
+							<a href="${path1 }/UpdateReview.do?r_num=${rev.r_num }" class="button is-info">이용후기 수정</a>
 						</c:if>
 					</td>
 				</tr>

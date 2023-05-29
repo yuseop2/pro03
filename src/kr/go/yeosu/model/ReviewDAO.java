@@ -14,6 +14,7 @@ public class ReviewDAO {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;	
 	
+	//리뷰 리스트 전체 - 어드민용
 	public ArrayList<ReviewDTO> reviewListAll(){
 		ArrayList<ReviewDTO> reviewList = new ArrayList<ReviewDTO>();
 		try {
@@ -42,12 +43,13 @@ public class ReviewDAO {
 		return reviewList;
 	}	
 	
-	public ArrayList<ReviewDTO> reviewListBycate(String cate){
-		ArrayList<ReviewDTO> reviewList = new ArrayList<ReviewDTO>();
+	//리뷰리스트 장소마다(pcode)
+	public ArrayList<ReviewDTO> reviewListByPcode(String pcode){
+		ArrayList<ReviewDTO> rList = new ArrayList<ReviewDTO>();
 		try {
 			con = MySQL8.getConnection();
-			pstmt = con.prepareStatement(MySQL8.REVIEW_SELECT_BYCATE);
-			pstmt.setString(1, cate);
+			pstmt = con.prepareStatement(MySQL8.REVIEW_SELECT_BYPCODE);
+			pstmt.setString(1, pcode);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
 				ReviewDTO rev = new ReviewDTO();
@@ -58,7 +60,7 @@ public class ReviewDAO {
 				rev.setReview(rs.getString("review"));
 				rev.setPic(rs.getString("pic"));
 				rev.setRegdate(rs.getString("regdate"));
-				reviewList.add(rev);				
+				rList.add(rev);				
 			}
 		} catch (ClassNotFoundException e) { //오라클 JDBC 클래스가 없거나 경로가 다른 경우 발생
 			e.printStackTrace();
@@ -68,17 +70,17 @@ public class ReviewDAO {
 			e.printStackTrace();
 		}
 		MySQL8.close(rs, pstmt, con);
-		return reviewList;
+		return rList;
 	}
 	
-		
-	public ReviewDTO reviewDetail(String pcode){
+	//리뷰 디테일 (하나 r_num)	
+	public ReviewDTO reviewDetail(int r_num){
 		ReviewDTO rev = new ReviewDTO();
 		
 		try {
 			con = MySQL8.getConnection();
 			pstmt = con.prepareStatement(MySQL8.REVIEW_SELECT_ONE);
-			pstmt.setString(1, pcode);
+			pstmt.setInt(1, r_num);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				rev.setR_num(rs.getInt("r_num"));
@@ -160,5 +162,5 @@ public class ReviewDAO {
 			MySQL8.close(pstmt, con);
 		}
 		return cnt;
-	}	
+	}
 }

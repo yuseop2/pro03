@@ -124,8 +124,7 @@
 				 			<a class="navbar-link has-text-info-dark" >마이 페이지</a>	
 					 		<div class="navbar-dropdown">
 								<a class="navbar-item has-text-info-dark" href="${path }/MyPage.do">나의 정보</a>	
-								<a class="navbar-item has-text-info-dark" href="${path }/NoticeList.do">공지사항</a>
-								<a class="navbar-item has-text-info-dark" href="${path }/ReviewList.do">Review</a>
+								<a class="navbar-item has-text-info-dark" href="${path }/NoticeList.do">공지사항</a>								
 								<a class="navbar-item has-text-info-dark" href="${path }/faqList.do">FAQ</a>
 								<a class="navbar-item has-text-info-dark" href="${path }/QnaList.do">QnA</a>
 							</div>								
@@ -138,7 +137,7 @@
 			      			<div class="navbar-dropdown">
 				     			<a class="navbar-item has-text-info-dark" href="${path }/AdminPlaceList.do">장소 관리</a>
 					          	<a class="navbar-item has-text-info-dark" href="${path }/NoticeList.do">공지사항 관리</a>
-					          	<a class="navbar-item has-text-info-dark" href="${path }/ReviewList.do">Review 관리</a>
+					          	<a class="navbar-item has-text-info-dark" href="${path }/AdminReviewList.do">Review 관리</a>
 								<a class="navbar-item has-text-info-dark" href="${path }/faqList.do">FAQ 관리</a>
 								<a class="navbar-item has-text-info-dark" href="${path }/QnaList.do">QnA 관리</a>					          	        		         	
 			         		</div>

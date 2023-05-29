@@ -34,12 +34,13 @@ public class GetReviewCtrl extends HttpServlet {
 		request.setAttribute("cateMap", cateMap);	//카테고리 정보
 		request.setAttribute("rev", rev);
 				
-		rev = rdao.reviewDetail(pcode);	
+		int r_num = 0;
+		rev = rdao.reviewDetail(r_num);	
 						
 		System.out.println(request.getParameter("${rev.r_num }"));
 					
 		//디스패치로 view를 생성하여 getNotice.jsp로 요청 받은 noti를 포워드
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/review/getReview.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/review/getReview.jsp");
 		view.forward(request, response);
 	}
 }

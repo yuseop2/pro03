@@ -32,11 +32,11 @@ public class PlaceDetailCtrl extends HttpServlet {
 		HashMap<String, String> cateMap = dao.getCategory(cate);
 				
 		ReviewDAO rdao = new ReviewDAO();
-		ArrayList<ReviewDTO> rev = rdao.reviewListBycate(cate);
+		ArrayList<ReviewDTO> rList = rdao.reviewListByPcode(pcode);
 		
 		request.setAttribute("place", place);	//한 개의 상품 정보
 		request.setAttribute("cateMap", cateMap);	//카테고리 정보
-		request.setAttribute("rev", rev);
+		request.setAttribute("rList", rList);
 		
 		//디스패치로 view를 생성하여 proList.jsp로 요청 받은 proList를 포워드
 		RequestDispatcher view = request.getRequestDispatcher("/place/placeDetail.jsp");

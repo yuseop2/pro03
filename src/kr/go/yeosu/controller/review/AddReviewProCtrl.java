@@ -30,12 +30,14 @@ public class AddReviewProCtrl extends HttpServlet {
 		String uploadFilePath = context.getRealPath(savePath);  //서버 상에 실제 업로드되는 디렉토리 지정
 		System.out.println("지정된 업로드 디렉토리 : "+savePath);
 		System.out.println("서버 상의 실제 업로드되는 디렉토리 : "+uploadFilePath);
-			
+		
+		int r_num = 0;
 		String cate = "";
 		String pcode = "";
 		String id = "";
 		String review = "";
-		String fileName = "";			
+		String fileName = "";
+		String regdate = "";
 						
 		try {
 			MultipartRequest multi = new MultipartRequest(request, uploadFilePath, 
@@ -43,28 +45,38 @@ public class AddReviewProCtrl extends HttpServlet {
 			fileName = multi.getFilesystemName("pic"); // 업로드하고, 업로드된 파일의 이름 얻기
 			if (fileName == null) { // 파일이 업로드 되지 않았을때
 				System.out.print("파일 업로드 실패~!");
-			}  // 파일이 업로드 되었을때			
+			}  // 파일이 업로드 되었을때	
+			r_num = Integer.parseInt(multi.getParameter("r_num"));
 			cate = multi.getParameter("cate");
+			System.out.println(request.getParameter("cate"));
 			pcode = multi.getParameter("pcode");
 			id = multi.getParameter("id");
-			review = multi.getParameter("review");									
+			review = multi.getParameter("review");	
+			regdate = multi.getParameter("regdate");
 		} catch (Exception e) {
 			System.out.print("예외 발생 : " + e);
 		}
 			
 		ReviewDAO dao = new ReviewDAO();
 		ReviewDTO rev = new ReviewDTO();
+		rev.setR_num(r_num);
+		
 		rev.setCate(cate);
 		rev.setPcode(pcode);
 		rev.setId(id);
 		rev.setReview(review);
-		rev.setPic(fileName);
 		
-		System.out.println(request.getParameter("id"));
-		System.out.println(request.getParameter("review"));
-		System.out.println(request.getParameter("${sid }"));
+		rev.setPic(fileName);
+		rev.setRegdate(regdate);
+		
+		System.out.println(request.getParameter("r_num"));
 		System.out.println(request.getParameter("cate"));
+		System.out.println(request.getParameter("pcode"));
+		System.out.println(request.getParameter("${sid }"));
 		System.out.println(request.getParameter("id"));
+		
+		System.out.println(request.getParameter("fileName"));
+		System.out.println(request.getParameter("regdate"));
 		
 		int cnt = dao.addReview(rev);
 		if(cnt==0){ //리뷰 등록 실패

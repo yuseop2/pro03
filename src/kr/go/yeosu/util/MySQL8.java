@@ -55,8 +55,8 @@ public class MySQL8 {
 	
 	//Review 관련 SQL
 	public final static String REVIEW_SELECT_ALL = "select * from tbl_review order by regdate desc";
-	public final static String REVIEW_SELECT_BYCATE = "select * from tbl_review where cate=?";
-	public final static String REVIEW_SELECT_ONE = "select * from tbl_review where pcode=?";
+	public final static String REVIEW_SELECT_BYPCODE = "select * from tbl_review where pcode=?";
+	public final static String REVIEW_SELECT_ONE = "select * from tbl_review where r_num=?";
 	public final static String REVIEW_INSERT = "insert into tbl_review(cate, pcode, id, review, pic) values (?,?,?,?,?)";
 	public final static String REVIEW_UPDATE = "update tbl_review SET review=? where id=? and r_num=?";
 	public final static String REVIEW_DELETE = "delete from tbl_review where r_num=?";

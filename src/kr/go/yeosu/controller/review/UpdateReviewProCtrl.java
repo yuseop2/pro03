@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.go.yeosu.dto.ReviewDTO;
+import kr.go.yeosu.model.ReviewDAO;
+
 @WebServlet("/UpdateReviewPro.do")
 public class UpdateReviewProCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -17,28 +20,24 @@ public class UpdateReviewProCtrl extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		ReviewDAO dao = new ReviewDAO();
-		Review rev = new Review();
+		ReviewDTO rev = new ReviewDTO();
 		
-		String w_num = request.getParameter("w_num");		
-		rev.setW_num(w_num);
+		int r_num = Integer.parseInt(request.getParameter("r_num"));		
+		
+		rev.setR_num(r_num);
 		
 		String id = request.getParameter("id"); 
 		rev.setId(id);
 		
-		String o_code = request.getParameter("o_code");
-		rev.setO_code(o_code);
+		String pcode = request.getParameter("pcode");
+		rev.setPcode(pcode);
 		rev.setReview(request.getParameter("review"));
-		if(request.getParameter("new_rating")==null) {
-			rev.setRating(Integer.parseInt(request.getParameter("rating")));
-		} else {
-			rev.setRating(Integer.parseInt(request.getParameter("new_rating")));	
-		}
-		
+				
 		int cnt = dao.updateReview(rev);
 		if(cnt>0){
-			response.sendRedirect("MySalesList.do?id="+id);
+			response.sendRedirect("PlaceDetail.do?pcode="+pcode);
 		} else {
-			response.sendRedirect("UpdateReview.do?w_num="+w_num);
+			response.sendRedirect("UpdateReview.do?r_num="+r_num);
 		}
 	}
 }

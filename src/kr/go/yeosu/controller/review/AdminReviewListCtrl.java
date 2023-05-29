@@ -13,17 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 import kr.go.yeosu.dto.ReviewDTO;
 import kr.go.yeosu.model.ReviewDAO;
 
-@WebServlet("/ReviewList.do")
-public class ReviewListCtrl extends HttpServlet {
+@WebServlet("/AdminReviewList.do")
+public class AdminReviewListCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ReviewDAO rdao = new ReviewDAO();
-		ArrayList<ReviewDTO> reviewList = new ArrayList<ReviewDTO>();
-		reviewList = rdao.reviewListAll();
-		request.setAttribute("reviewList", reviewList);
+		ArrayList<ReviewDTO> rList = rdao.reviewListAll();
+				
+		request.setAttribute("rList", rList);
 		
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/review/reviewList.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/review/reviewList.jsp");
 		view.forward(request, response);
 	}
 }

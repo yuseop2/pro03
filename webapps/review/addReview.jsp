@@ -28,7 +28,7 @@
 						</th>
 						<td>
 							<span id="pname">${place.pname }</span>													
-							<input type="hidden" name="id" id="id" value="${sid }">													
+							<input type="hidden" name="id" id="id" value="${sid }">																			
 						</td>						
 					</tr>					
 					<tr>

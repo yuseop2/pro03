@@ -31,7 +31,7 @@ public class InsertPlaceProCtrl extends HttpServlet {
 		String uploadFilePath = context.getRealPath(savePath);  //서버 상에 실제 업로드되는 디렉토리 지정
 		System.out.println("지정된 업로드 디렉토리 : "+savePath);
 		System.out.println("서버 상의 실제 업로드되는 디렉토리 : "+uploadFilePath);
-		
+				
 		String pcode = "";
 		String pname = "";
 		String cate = "";

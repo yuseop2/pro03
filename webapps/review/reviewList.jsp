@@ -27,11 +27,11 @@
 				</tr>
 			</thead>
 			<tbody>	
-				<c:forEach var="rev" items="${reviewList }" >
+				<c:forEach var="rev" items="${rList }" >
 				<tr>												
-					<td>${rev.r_num }</td>
-					<td>${rev.id }</td>
-					<td><a href="${path1 }/GetReview.do?r_num=${rev.r_num }" >${rev.review }</a></td>					
+					<td>글 번호 : ${rev.r_num }</td>
+					<td>작성자  : ${rev.id }</td>
+					<td><a href="${path1 }/GetReview.do?r_num=${rev.r_num }" >리뷰 : ${rev.review }</a></td>					
 					<td>						
 						<a href="${path1 }/DelReview.do?r_num=${rev.r_num }" class="button is-info">삭제</a>
 					</td>

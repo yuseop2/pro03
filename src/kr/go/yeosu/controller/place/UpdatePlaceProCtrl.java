@@ -1,7 +1,6 @@
 package kr.go.yeosu.controller.place;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -32,8 +31,7 @@ public class UpdatePlaceProCtrl extends HttpServlet {
 		String uploadFilePath = context.getRealPath(savePath);  //서버 상에 실제 업로드되는 디렉토리 지정
 		System.out.println("지정된 업로드 디렉토리 : "+savePath);
 		System.out.println("서버 상의 실제 업로드되는 디렉토리 : "+uploadFilePath);
-		
-		int n = 0;
+			
 		String pcode = "";
 		String cate = "";
 		String fileName = "";
@@ -52,11 +50,11 @@ public class UpdatePlaceProCtrl extends HttpServlet {
 			MultipartRequest multi = new MultipartRequest(request, uploadFilePath, 
 					uploadFileSizeLimit, encType, new DefaultFileRenamePolicy());	
 			
-			fileName = multi.getFileNames("file1");
+			fileName = multi.getFilesystemName("pic");
 			if (fileName == null) { // 파일이 업로드 되지 않았을때
-				place.setPic(ori_pic);
+				place.setPic(oriFileName);
 			} else {
-				place.setPic("/img/"+fileName);
+				place.setPic("place/img/"+fileName);
 			}
 			
 			pcode = multi.getParameter("pcode");				
