@@ -42,21 +42,30 @@ public class AddReviewProCtrl extends HttpServlet {
 		try {
 			MultipartRequest multi = new MultipartRequest(request, uploadFilePath, 
 					uploadFileSizeLimit, encType, new DefaultFileRenamePolicy());
+			System.out.println("야호");
+			
 			fileName = multi.getFilesystemName("pic"); // 업로드하고, 업로드된 파일의 이름 얻기
-						
+			System.out.println("야호2");		
 			if (fileName == null) { // 파일이 업로드 되지 않았을때
 				System.out.print("파일 업로드 실패~!");				
 				
-			}  // 파일이 업로드 되었을때	
+			}  // 파일이 업로드 되었을때
+			System.out.println("야호2-1");	
 			r_num = Integer.parseInt(multi.getParameter("r_num"));
-			cate = multi.getParameter("cate");			
+			System.out.println("야호3");	
+			cate = multi.getParameter("cate");	
+			System.out.println("야호4");	
 			pcode = multi.getParameter("pcode");
+			System.out.println("야호5");	
 			id = multi.getParameter("id");
-			review = multi.getParameter("review");	
+			System.out.println("야호6");	
+			review = multi.getParameter("review");
+			System.out.println("야호7");	
 			regdate = multi.getParameter("regdate");
+			System.out.println("야호8");	
 			
-			System.out.println(multi.getParameter("r_num"));
-			System.out.println(multi.getParameter("cate"));
+			System.out.println(r_num);
+			System.out.println(cate);
 			System.out.println(multi.getParameter("pcode"));
 			System.out.println(multi.getParameter("${sid }"));
 			System.out.println(multi.getParameter("id"));
