@@ -43,16 +43,28 @@ public class AddReviewProCtrl extends HttpServlet {
 			MultipartRequest multi = new MultipartRequest(request, uploadFilePath, 
 					uploadFileSizeLimit, encType, new DefaultFileRenamePolicy());
 			fileName = multi.getFilesystemName("pic"); // 업로드하고, 업로드된 파일의 이름 얻기
+						
 			if (fileName == null) { // 파일이 업로드 되지 않았을때
-				System.out.print("파일 업로드 실패~!");
+				System.out.print("파일 업로드 실패~!");				
+				
 			}  // 파일이 업로드 되었을때	
 			r_num = Integer.parseInt(multi.getParameter("r_num"));
-			cate = multi.getParameter("cate");
-			System.out.println(request.getParameter("cate"));
+			cate = multi.getParameter("cate");			
 			pcode = multi.getParameter("pcode");
 			id = multi.getParameter("id");
 			review = multi.getParameter("review");	
 			regdate = multi.getParameter("regdate");
+			
+			System.out.println(multi.getParameter("r_num"));
+			System.out.println(multi.getParameter("cate"));
+			System.out.println(multi.getParameter("pcode"));
+			System.out.println(multi.getParameter("${sid }"));
+			System.out.println(multi.getParameter("id"));
+			
+			System.out.println(multi.getParameter("fileName"));
+			System.out.println(multi.getParameter("regdate"));
+			
+			
 		} catch (Exception e) {
 			System.out.print("예외 발생 : " + e);
 		}
@@ -69,14 +81,7 @@ public class AddReviewProCtrl extends HttpServlet {
 		rev.setPic(fileName);
 		rev.setRegdate(regdate);
 		
-		System.out.println(request.getParameter("r_num"));
-		System.out.println(request.getParameter("cate"));
-		System.out.println(request.getParameter("pcode"));
-		System.out.println(request.getParameter("${sid }"));
-		System.out.println(request.getParameter("id"));
 		
-		System.out.println(request.getParameter("fileName"));
-		System.out.println(request.getParameter("regdate"));
 		
 		int cnt = dao.addReview(rev);
 		if(cnt==0){ //리뷰 등록 실패
