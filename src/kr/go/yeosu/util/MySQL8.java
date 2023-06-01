@@ -64,8 +64,8 @@ public class MySQL8 {
 	//QnA 관련 SQL
 	public final static String QNO_GENERATOR = "select * from qna order by qno desc limit 1 ;";
 	public final static String ADD_QNA = "insert into qna values (?,?,?,?,now(),1,?,0)";
-	public final static String ADD_REPLY = "insert into qna values (?,?,?,?,now(),2,?,0)";
-	public final static String QNA_LIST = "select * from qna order by parno desc, qno asc";
+	public final static String ADD_REPLY = "insert into qna values (?,?,?,?,now(),2,?,0)";	
+	public final static String QNA_LIST = "select * from qna order by parno desc,qno asc";
 	public final static String QNA_SELECT = "select * from qna where parno=? order by qno asc";
 	public final static String QNA_SELECT_ONE = "select * from qna where qno=?";
 	public final static String REPLY_LIST = "select * from qna where parno=? and lev=2 order by qno asc";
@@ -75,6 +75,13 @@ public class MySQL8 {
 	public final static String DELETE_QNA = "delete from qna where parno=?";
 	public final static String DELETE_REPLY = "delete from qna where qno=?";	
 	
+	//FAQ관련SQL
+	public final static String FNO_GENERATOR = "select * from faq order by fno desc limit 1 ;";
+	public final static String ADD_FAQ = "insert into faq values (?,?,?,now())";
+	public final static String UPDATE_FAQ = "update faq set fquestion=?, fanswer=? where fno=?";
+	public final static String DELETE_FAQ = "delete from faq where fno=?";
+	public final static String GET_FAQ = "select * from faq order by fno asc";
+	public final static String FAQ_SELECT_ONE = "select * from faq where fno=?";
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName(driver);

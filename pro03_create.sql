@@ -2,7 +2,7 @@ select * from mysql.user;
 show databases;
 
 show tables;
-
+desc tbl_review;
 use yeosu;
 set AUTOCOMMIT=true;	-- 자동커밋 설정
 show variables like 'autocommit';	-- 자동커밋 설정 확인
@@ -17,7 +17,7 @@ select * from sample1;
 commit;
 select * from tbl_review;
 select * from tbl_place;
-drop table tbl_review;
+drop table tbl_place;
 update tbl_user set pw='rFPNhUtHXxUHGMVMhNXGplnn6v8C4wmdVeUZNGFX56+ikGqS1x5IPTor9R9njBr5aW8ISw=='where id = 'lys24';
 select * from tbl_place where cate=? order by pcode desc limit 1;
 -- ALTER TABLE sequence_table auto_increment=1; (MYSQL AUTO_INCREMENT 초기화)
@@ -47,3 +47,22 @@ create table tbl_review(
 select cate, cname, gname from tbl_cate where cate like '01'||'%' order by cate;
 
 select * from tbl_cate where cate='01';
+
+create table faq(
+	fno varchar(8) primary key,
+    fquestion varchar(500),
+    fanswer varchar(500),
+    resdate datetime default current_timestamp
+);
+create table qna(
+	qno varchar(8) primary key,
+    title varchar(100),
+    content varchar(1000),
+    author varchar(20),
+    resdate datetime default current_timestamp,
+    lev int,
+    parno varchar(8),
+    visited int default 0
+);
+
+

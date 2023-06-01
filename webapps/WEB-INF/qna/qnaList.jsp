@@ -54,7 +54,7 @@
 		</table>
 		 <c:if test="${!empty sid }">
 		<div>
-			<a href="${path1 }/AddQna.do" >질문하기</a>
+			<a class="button is-info" href="${path1 }/AddQna.do" >질문하기</a>
 		</div>
 		</c:if>
 	</div>

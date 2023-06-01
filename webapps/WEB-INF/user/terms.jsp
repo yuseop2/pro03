@@ -8,6 +8,7 @@
 <%@ include file="../../common.jsp" %>
 <title>회원 가입 약관</title>
 <style>
+h2 {text-align: center;}
 .container-fluid { width:1280px; }
 .agree_fr { width: 900px; white-space:pre-wrap; margin: 10px auto; 
 padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
@@ -315,10 +316,10 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 
 제33조(분쟁의 해결) "회사"는 분쟁이 발생하였을 경우에 "이용자"가 제기하는 정당한 의견이나 불만을 반영하여 적절하고 신속한 조치를 취합니다. 다만, 신속한 처리가 곤란한 경우에 "회사"는 "이용자"에게 그 사유와 처리일정을 통보합니다. 
 	</article>
-	<div class="form-check" style="text-align:center;">
+	<div class="form-check" style="text-align:center;" >
 		<input type="checkbox" id="ck_item1" name="ck_item" class="form-check-input">
-		<label for="ck_item1" class="form-check-label">약관에 동의</label><br><br>
-	</div>
+		<label for="ck_item1" class="button is-info is-light">약관에 동의</label><br><br>
+	</div>	
 	<article class="agree_fr">
 	 제1장 총칙
 
@@ -903,14 +904,14 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 	</article>
 	<div class="form-check" style="text-align:center;">
 		<input type="checkbox" id="ck_item2" name="ck_item2" class="form-check-input">
-		<label for="ck_item2" class="form-check-label">개인정보처리방침에 동의</label><br><br>
+		<label for="ck_item2" class="button is-info is-light">개인정보처리방침에 동의</label><br><br>
 	</div><br><hr><br>
 	<div class="form-check" style="text-align:center;">
-		<label for="ck_item3" onclick="protocol()" class="form-check-label"><strong>전체 약관에 동의</strong></label>
+		<label for="ck_item3" onclick="protocol()" class="button is-info"><strong>전체 약관에 동의</strong></label>
 	</div>
 	<br><hr><br>	
 	<div class="btn-group" style="clear:both; width:960px; margin:20px auto;">
-		<button type="button" id="in_btn1" class="btn btn-primary">다음 단계</button>
+		<a type="button" id="in_btn1" class="button is-info">다음 단계</a>
 	</div>
 	<script>
 	var ck_item1 = document.getElementById("ck_item1");

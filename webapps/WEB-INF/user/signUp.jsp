@@ -8,7 +8,6 @@
 <%@ include file="../../common.jsp" %>
 <title>회원 가입</title>
 <style>
-.container-fluid { width:1280px; }
 .agree_fr { width: 900px; white-space:pre-wrap; margin: 10px auto; 
 padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 .title { padding-top:36px; padding-bottom:20px; }
@@ -16,20 +15,18 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 </head>
 <body>
 <%@ include file="../../header.jsp" %>
-<div class="content" style="padding-top:30px; margin-top:30px; border-top:3px solid #333; min-height:500px; ">
+<div class="content" style="padding-top:30px; margin-top:30px; width:900px; min-height:700px; ">
 	<section class="container-fluid">
 		<h2 class="title">회원가입</h2>
-		<form name="frm1" id="frm1" action="${path1 }/UserJoinPro.do" method="post" onsubmit="return joinCheck(this)">
+		<form class="box" name="frm1" id="frm1" action="${path1 }/UserJoinPro.do" method="post" onsubmit="return joinCheck(this)">
 			<table class="table">
 				<tbody>
 					<tr>
 						<th>아이디</th>
 						<td>
 							<div class="form-row">
-								<input type="text" name="id" id="id" placeholder="영문소문자 및 숫자를 혼용하여 15글자 이내로 아이디 입력" 
-								class="form-control" maxlength="15"
-								 style="width:80%;display:inline-block;" autofocus required />
-								<input type="button" class="btn btn-primary" value="아이디 중복 확인" onclick="idCheck()">
+								<input type="text" name="id" id="id" class="form-control" maxlength="15"  autofocus required />
+								<input type="button" class="button is-info" value="아이디 중복 확인" onclick="idCheck()">
 								<input type="hidden" name="idck" id="idck" value="no">
 							</div>
 							<div>
@@ -74,14 +71,13 @@ padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
 						<input type="text" name="address2" id="address2" placeholder="상세 주소 입력" class="form-control" required /><br>
 						<input type="text" name="postcode" id="postcode" style="width:160px;float:left;margin-right:20px;"
 						 placeholder="우편번호" class="form-control">
-						<button id="post_btn" onclick="findAddr()" class="btn btn-primary">우편번호 검색</button>
+						<button id="post_btn" onclick="findAddr()" class="button is-info">우편번호 검색</button>
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">
-							<input type="submit" value="회원가입" class="btn btn-primary"/>
-							<input type="reset" value="취소" class="btn btn-primary"/>
-							
+						<td colspan="2" >
+							<input type="submit" value="회원가입" class="button is-info"/>
+							<input type="reset" value="취소" class="button is-info is-light"/>							
 						</td>
 					</tr>
 				</tbody>
