@@ -20,7 +20,7 @@
 
 ## 자바 스크립트 api : daum주소 api, json 데이터 처리, iamport 결제 api
 
-## 프로젝트 데이터 처리 패턴 : MVCZ(View ->Controller -> Model -> Comtroller -> View)
+## 프로젝트 데이터 처리 패턴 : MVC2(View ->Controller -> Model -> Comtroller -> View)
 
 ## 프로젝트 주요 기능 : 회원, 공지사항, 질문 및 답변, 자주 묻는 질문, 리뷰기능
 
